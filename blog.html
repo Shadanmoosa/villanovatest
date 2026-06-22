@@ -47,9 +47,19 @@
             <img src="images/villanovalogo11.png" alt="Aesthetica Logo" class="logo-img">
         </a>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
+        <!-- Mobile Header Actions (visible on mobile only) -->
+        <div class="mobile-header-actions">
+            <button class="top-bar-icon-btn mobile-search-btn" aria-label="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <button class="top-bar-icon-btn mobile-cart-btn" aria-label="Shopping Cart" style="position: relative;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span class="cart-badge">0</span>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
 
         <nav class="main-nav" id="main-nav">
             <ul class="nav-links">
@@ -64,6 +74,9 @@
                 </li>
                 <li class="active"><a href="blog.html">BLOG</a></li>
                 <li><a href="doctors.html#booking-form-section">CONTACTS</a></li>
+                <li class="mobile-only-nav-item">
+                    <a href="doctors.html#booking-form-section" class="book-visit-btn-mobile">BOOK A VISIT</a>
+                </li>
             </ul>
         </nav>
     </header>

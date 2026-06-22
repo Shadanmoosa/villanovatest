@@ -262,6 +262,14 @@ body {
     color: var(--text-dark);
 }
 
+.mobile-header-actions {
+    display: none;
+}
+
+.mobile-only-nav-item {
+    display: none;
+}
+
 /* Hero Pages Banner */
 .page-hero {
     padding: 90px 6% 75px 6%;
@@ -1695,14 +1703,19 @@ select.form-control option {
 }
 
 @media (max-width: 768px) {
-    .top-bar-left {
-        display: none;
+    .top-bar {
+        display: none !important;
+    }
+
+    .header-transparent {
+        top: 0 !important;
     }
     
     .main-header {
         padding: 20px 4%;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
     
     .logo-container {
@@ -1722,8 +1735,48 @@ select.form-control option {
         display: none; /* Hide standard nav */
     }
     
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mobile-header-actions .top-bar-icon-btn {
+        color: var(--text-dark);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .header-transparent .mobile-header-actions .top-bar-icon-btn {
+        color: var(--white) !important;
+    }
+
+    body.mobile-menu-open .mobile-header-actions .top-bar-icon-btn:not(.menu-toggle) {
+        display: none !important;
+    }
+
     .menu-toggle {
-        display: block; /* Show mobile hamburger */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--text-dark);
+        padding: 0;
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .header-transparent .menu-toggle {
+        color: var(--white) !important;
     }
     
     /* Mobile Menu Drawer style (triggered by JS) */
@@ -1746,10 +1799,72 @@ select.form-control option {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        width: 100%;
     }
     
     .main-nav.mobile-active .nav-links a {
         font-size: 16px;
+        color: var(--text-dark) !important;
+    }
+
+    .main-nav.mobile-active .nav-links a:hover {
+        color: var(--gold) !important;
+    }
+
+    .mobile-only-nav-item {
+        display: block;
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 15px;
+    }
+
+    .book-visit-btn-mobile {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 14px 0;
+        background-color: var(--navy);
+        color: var(--white) !important;
+        border: 1px solid var(--navy);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        transition: var(--transition);
+    }
+
+    .book-visit-btn-mobile:hover {
+        background-color: var(--gold);
+        border-color: var(--gold);
+        color: var(--text-dark) !important;
+    }
+
+    /* Lock body scroll when mobile menu is active */
+    body.mobile-menu-open {
+        overflow: hidden;
+    }
+
+    /* Position close button fixed and dark when menu is active */
+    body.mobile-menu-open .menu-toggle {
+        position: fixed;
+        right: 4%;
+        top: 20px;
+        color: var(--text-dark) !important;
+        z-index: 1000;
+    }
+
+    /* Keep mobile logo visible, fixed and dark when menu is active */
+    body.mobile-menu-open .mobile-logo {
+        position: fixed;
+        left: 4%;
+        top: 20px;
+        z-index: 1000;
+    }
+    
+    body.mobile-menu-open .header-transparent .mobile-logo .logo-img {
+        filter: none !important;
     }
     
     .appointment-section {

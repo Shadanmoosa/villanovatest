@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('mobile-active');
+            document.body.classList.toggle('mobile-menu-open');
             
             // Toggle hamburger icon between menu and close
             const isOpened = mainNav.classList.contains('mobile-active');
