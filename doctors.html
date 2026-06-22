@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors & Specialists - Aesthetica</title>
+    <meta name="description" content="Meet our board-certified estheticians and cosmetologists at Aesthetica. Book an appointment for tailored clinic treatments.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="top-bar-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>0 800 123 1234</span>
+            </div>
+            <div class="top-bar-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>OUR LOCATIONS</span>
+            </div>
+        </div>
+        <!-- Logo for desktop view -->
+        <a href="index.html" class="logo-container desktop-logo">
+            <img src="images/villanovalogo11.png" alt="Aesthetica Logo" class="logo-img">
+        </a>
+
+        <div class="top-bar-right">
+            <div class="top-bar-icons">
+                <button class="top-bar-icon-btn" aria-label="Search">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="top-bar-icon-btn" aria-label="Shopping Cart" style="position: relative;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+            <a href="#booking-form-section" class="book-visit-btn">BOOK A VISIT</a>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <!-- Logo for mobile view -->
+        <a href="index.html" class="logo-container mobile-logo">
+            <img src="images/villanovalogo11.png" alt="Aesthetica Logo" class="logo-img">
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">HOME <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                </li>
+                <li class="active">
+                    <a href="doctors.html">SERVICES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                </li>
+                <li>
+                    <a href="doctors.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                </li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="#booking-form-section">CONTACTS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO BANNER -->
+    <section class="page-hero marble-bg">
+        <h1>DOCTORS PAGE</h1>
+        <p class="subtitle">The ultimate dental health experience for your whole family in Portland, Oregon</p>
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Doctors Page</span>
+        </div>
+    </section>
+
+    <!-- DOCTORS GRID SECTION -->
+    <main class="section-container">
+        <div class="grid-3" style="margin-bottom: 30px;">
+            <!-- Doctor 1 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Miranda Kellers">
+                </div>
+                <h3 class="doctor-name">Miranda Kellers</h3>
+                <p class="doctor-role">Esthetician</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=600&q=80" alt="Samantha Smith">
+                </div>
+                <h3 class="doctor-name">Samantha Smith</h3>
+                <p class="doctor-role">Body Aesthetic</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Amanda Johnson">
+                </div>
+                <h3 class="doctor-name">Amanda Johnson</h3>
+                <p class="doctor-role">Cosmetologist</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Miranda Kellers">
+                </div>
+                <h3 class="doctor-name">Miranda Kellers</h3>
+                <p class="doctor-role">Esthetician</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80" alt="Samantha Smith">
+                </div>
+                <h3 class="doctor-name">Samantha Smith</h3>
+                <p class="doctor-role">Body Aesthetic</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="doctor-card">
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Amanda Johnson">
+                </div>
+                <h3 class="doctor-name">Amanda Johnson</h3>
+                <p class="doctor-role">Cosmetologist</p>
+                <div class="doctor-footer">
+                    <a href="#booking-form-section" class="open-profile-btn">OPEN PROFILE</a>
+                    <div class="doctor-socials">
+                        <a href="#" class="doctor-social-btn" aria-label="Share">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </a>
+                        <a href="#" class="doctor-social-btn" aria-label="LinkedIn">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- APPOINTMENT SECTION -->
+    <section class="appointment-section" id="booking-form-section">
+        <div class="appointment-image">
+            <img src="images/booking-hero.png" alt="Aesthetica Booking Hero">
+        </div>
+        <div class="appointment-content">
+            <h2>SIGN UP FOR APPOINTMENT</h2>
+            <p class="subtitle">The ultimate dental health experience for your whole family in Portland, Oregon</p>
+            
+            <form class="appointment-form" id="appointment-form">
+                <div class="form-group">
+                    <label for="treatment-select">TREATMENT</label>
+                    <select id="treatment-select" class="form-control">
+                        <option value="" disabled selected>Select Treatment</option>
+                        <option value="Facial Radiance">Facial Radiance</option>
+                        <option value="Body Contouring">Body Contouring</option>
+                        <option value="Skin Rejuvenation">Skin Rejuvenation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="doctor-select">DOCTOR</label>
+                    <select id="doctor-select" class="form-control">
+                        <option value="" disabled selected>Select Doctor</option>
+                        <option value="Miranda Kellers">Miranda Kellers</option>
+                        <option value="Samantha Smith">Samantha Smith</option>
+                        <option value="Amanda Johnson">Amanda Johnson</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-name">YOUR NAME</label>
+                    <input type="text" id="client-name" class="form-control" placeholder="YOUR NAME">
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-phone">YOUR PHONE</label>
+                    <input type="tel" id="client-phone" class="form-control" placeholder="0 800 123 1234">
+                </div>
+                
+                <div class="form-group">
+                    <label for="booking-date">DATE</label>
+                    <input type="date" id="booking-date" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="booking-time">TIME</label>
+                    <input type="time" id="booking-time" class="form-control">
+                </div>
+                
+                <button type="submit" class="form-submit-btn">MAKE AN APPOINTMENT</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM SECTION -->
+    <section class="instagram-section">
+        <h3>INSTAGRAM @AESTHETICA</h3>
+        <div class="instagram-grid">
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 1">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 2">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 3">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 4">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 5">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Instagram Skincare Item 6">
+                <div class="instagram-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="doctors.html">Services</a></li>
+                    <li><a href="doctors.html">Pages</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#booking-form-section">Contacts</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-content">
+                <!-- Address Column -->
+                <div class="footer-column left">
+                    <h4>Address</h4>
+                    <p>9 E. 68th Street, TC, New York, NY 10065</p>
+                    <p class="sub-text">Mon-Fri: 9am - 6pm<br>Sat: By Appointment Only</p>
+                </div>
+
+                <!-- Center Logo Column -->
+                <div class="footer-column center">
+                    <a href="index.html" class="logo-container" style="margin-bottom: 0;">
+                        <img src="images/villanovalogo11.png" alt="Aesthetica Logo" class="logo-img" style="filter: none; max-height: 48px;">
+                    </a>
+                </div>
+
+                <!-- Contacts Column -->
+                <div class="footer-column right">
+                    <h4>Contacts</h4>
+                    <a href="tel:+18001231234" class="contact-link">+1 800-123-1234</a>
+                    <a href="mailto:clinic@example.com" class="contact-link" style="font-size: 13px; text-transform: lowercase;">clinic@example.com</a>
+                    <div class="footer-social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>This is a sample website - created by antigravity © 2024 - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
