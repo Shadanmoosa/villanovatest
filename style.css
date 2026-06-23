@@ -2409,10 +2409,10 @@ select.form-control option {
     transform: translateX(-50%) translateY(10px);
     background-color: #f7d5bd; /* Peach color matching mockup */
     color: #121e31;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    padding: 8px 16px;
+    padding: 15px 35px;
     white-space: nowrap;
     text-transform: uppercase;
     text-decoration: none;
@@ -2465,13 +2465,502 @@ select.form-control option {
     }
     
     .hotspot-tooltip {
-        font-size: 10px;
-        padding: 6px 12px;
+        font-size: 11px;
+        padding: 12px 24px;
     }
 }
 
 @media (max-width: 480px) {
     .hotspots-title {
         font-size: 26px;
+    }
+}
+
+/* Popular Procedures Section */
+.popular-procedures-section {
+    padding: 120px 6%;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.popular-procedures-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.procedure-showcase-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.procedure-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    position: relative;
+    min-height: auto;
+}
+
+.procedure-text-card-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.procedure-image-container-wrapper {
+    position: relative;
+    z-index: 5;
+    height: 380px;
+}
+
+.procedure-text-card {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 15px 45px rgba(29, 44, 71, 0.08);
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.procedure-text-card,
+.procedure-text-card .exit-wrapper,
+.procedure-text-card .enter-wrapper {
+    padding: 70px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.procedure-text-card .exit-wrapper,
+.procedure-text-card .enter-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.procedure-text-card h3 {
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--navy);
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.procedure-text-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.procedure-view-details-btn {
+    display: inline-block;
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 14px 35px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-radius: 2px;
+    border: 1px solid var(--navy);
+    z-index: 2;
+}
+
+.procedure-view-details-btn:hover {
+    background-color: transparent;
+    color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.procedure-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 15px 45px rgba(29, 44, 71, 0.08);
+}
+
+.procedure-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.procedure-image-container .exit-wrapper,
+.procedure-image-container .enter-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.procedure-image-container .exit-wrapper img,
+.procedure-image-container .enter-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tabs Navigation */
+.procedures-nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+    border: 1px solid rgba(205, 170, 125, 0.25);
+    background-color: var(--bg-cream);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(29, 44, 71, 0.03);
+}
+
+.procedure-tab {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid var(--white);
+    color: var(--navy);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 16px 12px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 0;
+}
+
+.procedure-tab:last-child {
+    border-right: none;
+}
+
+.procedure-tab .tab-icon {
+    color: var(--gold);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.procedure-tab:hover {
+    background-color: var(--bg-cream-dark);
+}
+
+.procedure-tab.active {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.procedure-tab.active .tab-icon {
+    color: var(--gold-light);
+}
+
+/* Direction-Aware Transition Animations */
+
+/* Up direction: enters from bottom (translates from 100% to 0), exits to top (translates from 0 to -100%) */
+.switching-up .exit-wrapper {
+    animation: slide-out-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.switching-up .enter-wrapper {
+    animation: slide-in-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Down direction: enters from top (translates from -100% to 0), exits to bottom (translates from 0 to 100%) */
+.switching-down .exit-wrapper {
+    animation: slide-out-down 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.switching-down .enter-wrapper {
+    animation: slide-in-down 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slide-in-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-up {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in-down {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-down {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* Desktop Styles with overlapping layout */
+@media (min-width: 992px) {
+    .procedure-showcase {
+        grid-template-columns: repeat(12, 1fr);
+        min-height: 550px;
+        gap: 0;
+        align-items: center;
+    }
+    
+    .procedure-text-card-wrapper {
+        grid-column: 1 / 7; /* Columns 1 to 6 */
+        grid-row: 1;
+        z-index: 10;
+        align-self: center;
+    }
+    
+    .procedure-image-container-wrapper {
+        grid-column: 5 / 13; /* Columns 5 to 12 */
+        grid-row: 1;
+        z-index: 5;
+        height: 500px;
+    }
+    
+    .procedure-text-card {
+        height: 420px; /* Force consistent size across all procedure cards */
+    }
+    
+    /* Slightly offset the text card content so it doesn't get covered by the image */
+    .procedure-text-card,
+    .procedure-text-card .exit-wrapper,
+    .procedure-text-card .enter-wrapper {
+        padding: 70px 90px 70px 60px; /* More right padding to account for overlap */
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .popular-procedures-section {
+        padding: 80px 6%;
+    }
+    
+    .popular-procedures-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .procedure-showcase {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        min-height: auto;
+        border-bottom: 1px solid var(--white);
+    }
+    
+    .procedure-text-card-wrapper {
+        width: 100%;
+    }
+    
+    .procedure-image-container-wrapper {
+        height: 380px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .procedure-text-card {
+        min-height: auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .procedure-text-card,
+    .procedure-text-card .exit-wrapper,
+    .procedure-text-card .enter-wrapper {
+        padding: 50px 30px;
+        align-items: center;
+        text-align: center;
+        border-radius: 0;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .procedure-text-card h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    
+    .procedure-text-card p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .procedure-image-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .procedures-nav-tabs {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        border: 1px solid rgba(205, 170, 125, 0.2);
+        background-color: var(--white);
+        box-shadow: 0 4px 15px rgba(29, 44, 71, 0.03);
+        gap: 0;
+        margin-top: 30px;
+        border-radius: 4px;
+        overflow: hidden;
+        padding-top: 0;
+    }
+    
+    .procedure-tab {
+        flex: none;
+        width: 100%;
+        background-color: var(--bg-cream);
+        border: none;
+        border-bottom: 1px solid var(--white);
+        border-radius: 0;
+        padding: 16px 24px;
+        font-size: 11px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    
+    .procedure-tab:last-child {
+        border-bottom: none;
+    }
+    
+    .procedure-tab.active {
+        background-color: var(--navy);
+        color: var(--white);
+    }
+
+    /* Prevent text card height collapse and overlap on mobile view transitions */
+    .switching-up .exit-wrapper,
+    .switching-down .exit-wrapper {
+        display: none !important;
+    }
+    
+    .switching-up .enter-wrapper,
+    .switching-down .enter-wrapper {
+        position: relative !important;
+        opacity: 0;
+        animation: fadeInMobile 0.3s ease-out forwards;
+    }
+
+    /* Prevent doubling padding on card during transitions */
+    .switching-up .procedure-text-card,
+    .switching-down .procedure-text-card {
+        padding: 0 !important;
+    }
+}
+
+@keyframes fadeInMobile {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .procedure-tab {
+        padding: 14px 20px;
+        font-size: 10.5px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-procedures-title {
+        font-size: 28px;
+    }
+    
+    .procedure-image-container-wrapper {
+        height: 300px;
+    }
+    
+    .procedure-text-card,
+    .procedure-text-card .exit-wrapper,
+    .procedure-text-card .enter-wrapper {
+        padding: 40px 25px;
+    }
+    
+    .procedure-text-card h3 {
+        font-size: 22px;
+    }
+    
+    .procedure-text-card p {
+        font-size: 14px;
+        margin-bottom: 25px;
     }
 }

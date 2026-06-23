@@ -103,4 +103,134 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // Procedures Data
+    const proceduresData = [
+        {
+            title: "Facelift",
+            desc: "The facelift, or Rhytidectomy, helps restore a youthful appearance by tightening sagging skin and smoothing deep wrinkles along the jawline and face. Getting a facelift offers a significant boost in both appearance and self-esteem, helping you look as young as you feel.",
+            img: "images/services/facelift.png"
+        },
+        {
+            title: "Rhinoplasty",
+            desc: "Rhinoplasty is a surgical procedure that changes the shape and structure of the nose to improve its appearance, correct breathing issues, or both. By reshaping the nasal bone and cartilage, rhinoplasty helps achieve harmony with your natural facial features.",
+            img: "images/services/rhynoplasty.png"
+        },
+        {
+            title: "Mommy Makeover",
+            desc: "The goal of a mommy makeover is to restore the shape and appearance of a woman’s body after childbearing. Many women notice changes in their bodies post-pregnancy. There are many areas of the body that can be addressed, most commonly the breasts, abdomen, waist, genitalia and buttocks.",
+            img: "images/services/mommymakeover.png"
+        },
+        {
+            title: "Tummy Tuck",
+            desc: "A tummy tuck, or abdominoplasty, is designed to reshape the abdomen by removing excess skin and fat, and tightening weakened abdominal muscles. The remaining skin is then repositioned to create a flatter, more toned, and firmer midsection.",
+            img: "images/services/tummytuck.png"
+        },
+        {
+            title: "Liposuction",
+            desc: "Liposuction is a type of surgery. It uses suction to remove fat from specific areas of the body, such as the stomach, hips, thighs, buttocks, arms or neck. Liposuction also shapes these areas. That process is called contouring. Other names for liposuction include lipoplasty and body contouring.",
+            img: "images/services/liposution.png"
+        },
+        {
+            title: "Injectables",
+            desc: "Injectables are non-surgical treatments used to relax facial wrinkles, restore volume, and enhance facial contours. From smoothing smile lines to plumping lips, these quick procedures provide immediate, natural-looking rejuvenation with minimal downtime.",
+            img: "images/services/injuctables.png"
+        }
+    ];
+
+    // Popular Procedures Tabs Control
+    const tabsContainer = document.getElementById('procedures-nav-tabs');
+    if (tabsContainer) {
+        const tabs = tabsContainer.querySelectorAll('.procedure-tab');
+        const textCard = document.getElementById('procedure-text-card');
+        const imgContainer = document.getElementById('procedure-image-container');
+        const showcase = document.getElementById('procedure-showcase');
+        
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        function adjustLayoutForMobile() {
+            const activeTab = tabsContainer.querySelector('.procedure-tab.active');
+            if (window.innerWidth <= 991) {
+                if (activeTab && activeTab.nextSibling !== showcase) {
+                    activeTab.parentNode.insertBefore(showcase, activeTab.nextSibling);
+                }
+            } else {
+                const wrapper = tabsContainer.parentNode;
+                if (wrapper && showcase.parentNode !== wrapper) {
+                    wrapper.insertBefore(showcase, tabsContainer);
+                }
+            }
+        }
+
+        // Run on initial load and resize
+        adjustLayoutForMobile();
+        window.addEventListener('resize', adjustLayoutForMobile);
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                if (index === currentIndex || isTransitioning) return;
+                isTransitioning = true;
+
+                const direction = index > currentIndex ? 'up' : 'down';
+                const newData = proceduresData[index];
+
+                // Remove active class from all tabs, add to clicked one
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Instantly move showcase in DOM on mobile if switching active tabs
+                adjustLayoutForMobile();
+
+                // Get current text and image content for exit wrapper
+                const oldTextCardContent = textCard.innerHTML;
+                const oldImgSrc = imgContainer.querySelector('img').src;
+
+                // Setup exit and enter wrappers
+                textCard.innerHTML = `
+                    <div class="exit-wrapper">${oldTextCardContent}</div>
+                    <div class="enter-wrapper" style="opacity:0;">
+                        <h3>${newData.title.toUpperCase()}</h3>
+                        <p>${newData.desc}</p>
+                        <a href="doctors.html" class="procedure-view-details-btn">VIEW DETAILS</a>
+                    </div>
+                `;
+
+                imgContainer.innerHTML = `
+                    <div class="exit-wrapper">
+                        <img src="${oldImgSrc}" alt="Old">
+                    </div>
+                    <div class="enter-wrapper" style="opacity:0;">
+                        <img src="${newData.img}" alt="${newData.title}">
+                    </div>
+                `;
+
+                // Force layout reflow
+                textCard.offsetHeight;
+
+                // Apply direction class to trigger animation
+                showcase.className = `procedure-showcase switching-${direction}`;
+                
+                // Clear opacity override on enter wrappers to let keyframes take over
+                textCard.querySelector('.enter-wrapper').style.opacity = '';
+                imgContainer.querySelector('.enter-wrapper').style.opacity = '';
+
+                setTimeout(() => {
+                    // Set final static values
+                    textCard.innerHTML = `
+                        <h3>${newData.title.toUpperCase()}</h3>
+                        <p>${newData.desc}</p>
+                        <a href="doctors.html" class="procedure-view-details-btn">VIEW DETAILS</a>
+                    `;
+                    imgContainer.innerHTML = `
+                        <img src="${newData.img}" alt="${newData.title}">
+                    `;
+                    showcase.className = 'procedure-showcase';
+                    isTransitioning = false;
+                }, 500);
+
+                currentIndex = index;
+            });
+        });
+    }
 });
