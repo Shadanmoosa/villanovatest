@@ -233,4 +233,97 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Client Reviews Carousel Control
+    const reviewsSlider = document.getElementById('reviews-slider');
+    if (reviewsSlider) {
+        const slides = reviewsSlider.querySelectorAll('.review-slide');
+        const prevBtn = document.getElementById('reviews-prev-btn');
+        const nextBtn = document.getElementById('reviews-next-btn');
+        const reviewsSection = document.querySelector('.reviews-section');
+        
+        let activeIndex = 0;
+        let isTransitioning = false;
+        let autoPlayInterval;
+        const autoPlayDelay = 5000; // Auto-rotate every 5 seconds
+        
+        function showSlide(index, direction = 'next') {
+            if (index === activeIndex || isTransitioning) return;
+            isTransitioning = true;
+            
+            // Set sliding direction class on parent slider container
+            reviewsSlider.className = `reviews-slider slide-${direction}`;
+            
+            const currentSlide = slides[activeIndex];
+            const newSlide = slides[index];
+            
+            // Trigger exit transition
+            currentSlide.classList.remove('active');
+            currentSlide.classList.add('leaving');
+            
+            // Trigger enter transition
+            newSlide.classList.add('active');
+            
+            activeIndex = index;
+            
+            // Clean up direction classes and leaving state after transition completes (600ms matching CSS)
+            setTimeout(() => {
+                currentSlide.classList.remove('leaving');
+                reviewsSlider.className = 'reviews-slider';
+                isTransitioning = false;
+            }, 600);
+        }
+        
+        function nextSlide() {
+            let nextIndex = activeIndex + 1;
+            if (nextIndex >= slides.length) {
+                nextIndex = 0;
+            }
+            showSlide(nextIndex, 'next');
+        }
+        
+        function prevSlide() {
+            let prevIndex = activeIndex - 1;
+            if (prevIndex < 0) {
+                prevIndex = slides.length - 1;
+            }
+            showSlide(prevIndex, 'prev');
+        }
+        
+        // Auto-play control functions
+        function startAutoPlay() {
+            stopAutoPlay(); // Prevent multiple intervals
+            autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+        }
+        
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
+        
+        // Navigation button event listeners
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoPlay(); // Reset timer on manual click
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoPlay(); // Reset timer on manual click
+            });
+        }
+        
+        // Pause on hover
+        if (reviewsSection) {
+            reviewsSection.addEventListener('mouseenter', stopAutoPlay);
+            reviewsSection.addEventListener('mouseleave', startAutoPlay);
+        }
+        
+        // Initial start
+        startAutoPlay();
+    }
 });
