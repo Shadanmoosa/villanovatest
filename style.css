@@ -1380,7 +1380,7 @@ select.form-control option {
     align-items: center;
     text-align: center;
     padding: 180px 6% 120px 6%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)), url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1920&q=80');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)), url('images/hero.png');
     background-size: cover;
     background-position: center 15%;
     color: var(--white);
