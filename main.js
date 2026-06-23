@@ -92,4 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 400);
         }, 4000);
     }
+
+    // Before / After Slider Control
+    const slider = document.getElementById('before-after-slider');
+    if (slider) {
+        const input = slider.querySelector('.slider-input');
+        if (input) {
+            input.addEventListener('input', (e) => {
+                slider.style.setProperty('--position', `${e.target.value}%`);
+            });
+        }
+    }
 });
