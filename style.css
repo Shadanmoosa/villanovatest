@@ -40,7 +40,7 @@ body {
 
 /* Base marble background */
 .marble-bg {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -454,7 +454,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
@@ -764,7 +764,7 @@ select.form-control option {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -1380,7 +1380,7 @@ select.form-control option {
     align-items: center;
     text-align: center;
     padding: 180px 6% 120px 6%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)), url('images/hero.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)), url('images/hero.jpg');
     background-size: cover;
     background-position: center 15%;
     color: var(--white);
@@ -2525,7 +2525,7 @@ select.form-control option {
 }
 
 .procedure-text-card {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2556,7 +2556,7 @@ select.form-control option {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2832,7 +2832,7 @@ select.form-control option {
         border: none;
         border-radius: 0;
         box-shadow: none;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -2844,7 +2844,7 @@ select.form-control option {
         align-items: center;
         text-align: center;
         border-radius: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.png');
+        background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('images/marble-bg.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -2977,7 +2977,7 @@ select.form-control option {
     display: flex;
     align-items: center;
     padding: 80px 8%;
-    background-image: url('images/gallery11.png');
+    background-image: url('images/gallery11.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3055,7 +3055,7 @@ select.form-control option {
     }
 
     .gallery-banner-section {
-        background-image: linear-gradient(rgba(29, 44, 71, 0.65), rgba(29, 44, 71, 0.65)), url('images/gallery11.png');
+        background-image: linear-gradient(rgba(29, 44, 71, 0.65), rgba(29, 44, 71, 0.65)), url('images/gallery11.jpg');
         padding: 80px 6%;
         min-height: 450px;
         justify-content: center;
@@ -3086,7 +3086,7 @@ select.form-control option {
 .reviews-section {
     position: relative;
     padding: 100px 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('images/marble-bg.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('images/marble-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3359,4 +3359,88 @@ select.form-control option {
     .next-btn {
         right: 20%;
     }
+}
+
+
+/* ==========================================================================
+   Elegant Luxury Page Preloader
+   ========================================================================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121e31; /* Brand Dark Navy */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000; /* Ensure it stays above everything */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-logo {
+    max-height: 48px;
+    width: auto;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: preloader-logo-fadein 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s;
+}
+
+.preloader-line {
+    width: 160px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.preloader-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background-color: #cdaa7d; /* Brand Elegant Gold */
+    animation: preloader-loading 1.6s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+
+/* Animations */
+@keyframes preloader-logo-fadein {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes preloader-loading {
+    0% {
+        left: -100%;
+        width: 30%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        left: 100%;
+        width: 30%;
+    }
+}
+
+/* Hide State */
+.preloader-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
 }

@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Preloader Page Control
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        const hidePreloader = () => {
+            preloader.classList.add('preloader-hidden');
+            setTimeout(() => {
+                preloader.remove();
+            }, 600);
+        };
+        window.addEventListener('load', hidePreloader);
+        
+        // Safeguard timeout: clear preloader after 2.5 seconds max
+        setTimeout(() => {
+            if (document.getElementById('preloader')) {
+                hidePreloader();
+            }
+        }, 2500);
+    }
+
     // Mobile Navigation Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
@@ -109,34 +128,40 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Facelift",
             desc: "The facelift, or Rhytidectomy, helps restore a youthful appearance by tightening sagging skin and smoothing deep wrinkles along the jawline and face. Getting a facelift offers a significant boost in both appearance and self-esteem, helping you look as young as you feel.",
-            img: "images/services/facelift.png"
+            img: "images/services/facelift.jpg"
         },
         {
             title: "Rhinoplasty",
             desc: "Rhinoplasty is a surgical procedure that changes the shape and structure of the nose to improve its appearance, correct breathing issues, or both. By reshaping the nasal bone and cartilage, rhinoplasty helps achieve harmony with your natural facial features.",
-            img: "images/services/rhynoplasty.png"
+            img: "images/services/rhynoplasty.jpg"
         },
         {
             title: "Mommy Makeover",
             desc: "The goal of a mommy makeover is to restore the shape and appearance of a woman’s body after childbearing. Many women notice changes in their bodies post-pregnancy. There are many areas of the body that can be addressed, most commonly the breasts, abdomen, waist, genitalia and buttocks.",
-            img: "images/services/mommymakeover.png"
+            img: "images/services/mommymakeover.jpg"
         },
         {
             title: "Tummy Tuck",
             desc: "A tummy tuck, or abdominoplasty, is designed to reshape the abdomen by removing excess skin and fat, and tightening weakened abdominal muscles. The remaining skin is then repositioned to create a flatter, more toned, and firmer midsection.",
-            img: "images/services/tummytuck.png"
+            img: "images/services/tummytuck.jpg"
         },
         {
             title: "Liposuction",
             desc: "Liposuction is a type of surgery. It uses suction to remove fat from specific areas of the body, such as the stomach, hips, thighs, buttocks, arms or neck. Liposuction also shapes these areas. That process is called contouring. Other names for liposuction include lipoplasty and body contouring.",
-            img: "images/services/liposution.png"
+            img: "images/services/liposution.jpg"
         },
         {
             title: "Injectables",
             desc: "Injectables are non-surgical treatments used to relax facial wrinkles, restore volume, and enhance facial contours. From smoothing smile lines to plumping lips, these quick procedures provide immediate, natural-looking rejuvenation with minimal downtime.",
-            img: "images/services/injuctables.png"
+            img: "images/services/injuctables.jpg"
         }
     ];
+
+    // Preload procedure images in background for instant responsive tab switching
+    proceduresData.forEach(proc => {
+        const img = new Image();
+        img.src = proc.img;
+    });
 
     // Popular Procedures Tabs Control
     const tabsContainer = document.getElementById('procedures-nav-tabs');
