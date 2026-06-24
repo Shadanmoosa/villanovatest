@@ -376,4 +376,56 @@ document.addEventListener('DOMContentLoaded', () => {
             revealElements.forEach(el => el.classList.add('reveal-visible'));
         }
     }
+    
+    // Scroll-driven Parallax Animations (Unified Manager)
+    const parallaxItems = [
+        {
+            element: document.querySelector('.about-img-front'),
+            container: document.querySelector('.about-cosmetic-images'),
+            speed: 0.15
+        },
+        {
+            element: document.querySelector('.artistry-img-small-wrapper'),
+            container: document.querySelector('.artistry-images-wrapper'),
+            speed: 0.12
+        }
+    ].filter(item => item.element && item.container);
+
+    if (parallaxItems.length > 0) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+            let ticking = false;
+
+            const updateParallaxes = () => {
+                const viewportHeight = window.innerHeight;
+                const viewportCenter = viewportHeight / 2;
+
+                parallaxItems.forEach(item => {
+                    const rect = item.container.getBoundingClientRect();
+
+                    // Only calculate if the container is currently visible in viewport
+                    if (rect.top < viewportHeight && rect.bottom > 0) {
+                        const containerCenter = rect.top + (rect.height / 2);
+                        const diff = containerCenter - viewportCenter;
+                        const translateY = diff * item.speed;
+
+                        // Apply translation using 3D transforms for GPU hardware acceleration
+                        item.element.style.transform = `translate3d(0, ${translateY}px, 0)`;
+                    }
+                });
+                ticking = false;
+            };
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateParallaxes);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Run once on load to position correctly
+            updateParallaxes();
+        }
+    }
 });

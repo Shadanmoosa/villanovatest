@@ -1532,6 +1532,7 @@ select.form-control option {
     border-radius: 0;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     z-index: 2;
+    will-change: transform;
 }
 .about-cosmetic-content {
     display: flex;
@@ -3577,20 +3578,26 @@ select.form-control option {
     transform: scale(1.02);
 }
 
-.artistry-img-small {
+.artistry-img-small-wrapper {
     position: absolute;
     left: 0;
     bottom: -8%;
     width: 40%;
+    z-index: 5;
+    will-change: transform;
+}
+
+.artistry-img-small {
+    width: 100%;
     height: auto;
+    display: block;
     border-radius: 4px;
     box-shadow: 0 20px 45px rgba(29, 44, 71, 0.16);
-    z-index: 5;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .artistry-images-wrapper:hover .artistry-img-small {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 /* Right Column: Content Card Layout */
@@ -3697,7 +3704,7 @@ select.form-control option {
         padding-left: 12%;
     }
 
-    .artistry-img-small {
+    .artistry-img-small-wrapper {
         bottom: -5%;
     }
 
