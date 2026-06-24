@@ -2710,6 +2710,47 @@ select.form-control option {
 }
 
 /* Down direction: enters from top (translates from -100% to 0), exits to bottom (translates from 0 to 100%) */
+.ticker-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121e31; /* Theme Dark Navy */
+    overflow: hidden;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll-right 24s linear infinite;
+}
+
+/* Pause scroll on hover for readability if user wants to read a specific item */
+.ticker-banner:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+}
+
 .switching-down .exit-wrapper {
     animation: slide-out-down 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
@@ -3371,76 +3412,1037 @@ select.form-control option {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #121e31; /* Brand Dark Navy */
+    background: radial-gradient(circle at center, #1a2c47 0%, #0d1726 100%); /* Depth gradient */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100000; /* Ensure it stays above everything */
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.8s cubic-bezier(0.85, 0, 0.15, 1),
+                transform 0.8s cubic-bezier(0.85, 0, 0.15, 1),
+                visibility 0.8s;
 }
 
 .preloader-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
+/* Luxury gold aura pulsing behind the logo */
+.preloader-content::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(205, 170, 125, 0.15) 0%, rgba(13, 23, 38, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    animation: preloader-aura-pulse 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+/* Breathing scale and soft glowing drop shadow logo */
 .preloader-logo {
     max-height: 48px;
     width: auto;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     opacity: 0;
-    transform: translateY(10px);
-    animation: preloader-logo-fadein 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s;
+    transform: translateY(15px) scale(0.95);
+    filter: drop-shadow(0 0 15px rgba(205, 170, 125, 0.2));
+    animation: 
+        preloader-logo-intro 1.0s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.2s,
+        preloader-logo-breath 4s ease-in-out infinite alternate 1.2s;
 }
 
 .preloader-line {
-    width: 160px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.12);
+    width: 180px;
+    height: 1.5px;
+    background-color: rgba(255, 255, 255, 0.08);
     position: relative;
     overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Elegant gold gradient sheen loading line */
 .preloader-line::after {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
-    width: 50%;
+    width: 40%;
     height: 100%;
-    background-color: #cdaa7d; /* Brand Elegant Gold */
-    animation: preloader-loading 1.6s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+    background: linear-gradient(90deg, transparent, #cdaa7d, transparent);
+    animation: preloader-loading 1.8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
 }
 
 /* Animations */
-@keyframes preloader-logo-fadein {
+@keyframes preloader-logo-intro {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes preloader-logo-breath {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(205, 170, 125, 0.2));
+    }
+    100% {
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 25px rgba(205, 170, 125, 0.45));
+    }
+}
+
+@keyframes preloader-aura-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.85);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
     }
 }
 
 @keyframes preloader-loading {
     0% {
         left: -100%;
-        width: 30%;
-    }
-    50% {
-        width: 50%;
     }
     100% {
         left: 100%;
-        width: 30%;
     }
 }
 
-/* Hide State */
+/* Hide State (Slides up gracefully while fading) */
 .preloader-hidden {
     opacity: 0 !important;
+    transform: translateY(-100%) scale(1.02);
     visibility: hidden !important;
+}
+
+
+/* ==========================================================================
+   Aesthetic Artistry Section (Non-Surgical Treatments Layout)
+   ========================================================================== */
+.aesthetic-artistry-section {
+    padding: 120px 6%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.aesthetic-artistry-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Left Column: Overlapping Images Layout */
+.artistry-images-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Align the big image to the right container edge */
+    padding-left: 10%; /* Leaves space for the small overlapping image on the left */
+    box-sizing: border-box;
+}
+
+.artistry-img-big-container {
+    width: 85%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(29, 44, 71, 0.06);
+}
+
+.artistry-img-big {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.artistry-images-wrapper:hover .artistry-img-big {
+    transform: scale(1.02);
+}
+
+.artistry-img-small {
+    position: absolute;
+    left: 0;
+    bottom: -8%;
+    width: 40%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 20px 45px rgba(29, 44, 71, 0.16);
+    z-index: 5;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.artistry-images-wrapper:hover .artistry-img-small {
+    transform: translateY(-5px);
+}
+
+/* Right Column: Content Card Layout */
+.artistry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.artistry-tag {
+    display: inline-block;
+    background-color: #121e31; /* Deep Navy Brand Color */
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 7px 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.artistry-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.artistry-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Two-column features grid */
+.artistry-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 30px;
+    width: 100%;
+    margin: 0 0 45px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.artistry-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.artistry-check {
+    flex-shrink: 0;
+}
+
+/* Outline Navy Button */
+.artistry-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--navy);
+    padding: 15px 40px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-radius: 2px;
+    border: 1px solid var(--navy);
+}
+
+.artistry-btn:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 44, 71, 0.08);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .aesthetic-artistry-section {
+        padding: 80px 6%;
+    }
+
+    .aesthetic-artistry-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .artistry-images-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        padding-left: 12%;
+    }
+
+    .artistry-img-small {
+        bottom: -5%;
+    }
+
+    .artistry-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .artistry-features {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .artistry-features li {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .artistry-title {
+        font-size: 32px;
+    }
+    
+    .artistry-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .artistry-title {
+        font-size: 26px;
+    }
+    
+    .artistry-desc {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================================================
+   Doctor Biography Section (Meet Dr. Hoffman Layout)
+   ========================================================================== */
+.doctor-bio-section {
+    padding: 120px 6% 100px 6%;
+    background-color: #0b1523; /* Luxury Deep Slate Navy */
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.doctor-bio-container {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+/* Left Column Content styling */
+.doctor-bio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.doctor-bio-tag {
+    display: inline-block;
+    background-color: #cdaa7d; /* Brand Elegant Gold */
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    padding: 7px 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.doctor-bio-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.doctor-bio-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Outline White Button */
+.doctor-bio-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--white);
+    padding: 15px 40px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.doctor-bio-btn:hover {
+    background-color: var(--white);
+    color: #0b1523;
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Right Column styling: Portrait image with overlays */
+.doctor-bio-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    justify-self: center;
+}
+
+.doctor-img-container {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.doctor-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Signature overlay on top-right of photo */
+.doctor-signature {
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    width: 40%;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    filter: brightness(0) invert(1); /* Converts black ink SVG to pure white */
+    opacity: 0.95;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.doctor-bio-image-wrapper:hover .doctor-signature {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* Play Badge card overlay on bottom-left of photo */
+.doctor-video-badge {
+    position: absolute;
+    bottom: 8%;
+    left: -40px;
+    background-color: var(--white);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.3s var(--transition);
+}
+
+.doctor-video-badge:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.video-play-btn {
+    width: 38px;
+    height: 38px;
+    background-color: #cdaa7d; /* Brand Gold */
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(205, 170, 125, 0.4);
+}
+
+.video-play-btn svg {
+    margin-left: 2px; /* Centering tweak for play arrow triangle */
+}
+
+.doctor-video-badge span {
+    color: #121e31; /* Brand Navy */
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+}
+
+/* Bottom Statistics Counters */
+.doctor-stats-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 80px;
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-sans);
+    font-size: 46px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .doctor-bio-section {
+        padding: 80px 6% 60px 6%;
+    }
+
+    .doctor-bio-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-bottom: 40px;
+    }
+
+    .doctor-bio-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .doctor-bio-image-wrapper {
+        max-width: 440px;
+    }
+
+    .doctor-video-badge {
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+    }
+
+    .doctor-video-badge:hover {
+        transform: translateX(-50%) translateY(-3px) scale(1.02);
+    }
+
+    .doctor-signature {
+        right: -10px;
+    }
+
+    .doctor-stats-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+        margin-top: 60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-bio-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .doctor-bio-title {
+        font-size: 26px;
+    }
+
+    .doctor-bio-desc {
+        font-size: 14px;
+    }
+
+    .doctor-stats-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 38px;
+    }
+}
+
+
+/* ==========================================================================
+   Consultation Banner Section Layout
+   ========================================================================== */
+.consultation-banner-section {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background-image: linear-gradient(90deg, rgba(11, 21, 35, 0.3) 0%, rgba(11, 21, 35, 0) 60%), 
+                      url('images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.consultation-banner-content {
+    max-width: 520px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.consultation-banner-title {
+    font-family: var(--font-sans);
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.consultation-banner-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Outline white button */
+.consultation-banner-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--white);
+    padding: 15px 35px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.consultation-banner-btn:hover {
+    background-color: var(--white);
+    color: #121e31; /* Brand Navy */
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .consultation-banner-section {
+        background-image: linear-gradient(rgba(18, 30, 49, 0.55), rgba(18, 30, 49, 0.55)), 
+                          url('images/background2.jpg');
+        padding: 80px 6%;
+        min-height: 460px;
+        justify-content: center;
+    }
+
+    .consultation-banner-content {
+        align-items: center;
+        text-align: center;
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    .consultation-banner-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .consultation-banner-title {
+        font-size: 24px;
+    }
+    
+    .consultation-banner-desc {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================================================
+   Horizontal Ticker Offer Banner Layout (No padding/margin, scrolls right)
+   ========================================================================== */
+.ticker-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121e31; /* Theme Dark Navy */
+    overflow: hidden;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll-right 24s linear infinite;
+}
+
+/* Pause scroll on hover for readability if user wants to read a specific item */
+.ticker-banner:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+}
+
+.ticker-item {
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.ticker-icon {
+    height: 24px;
+    width: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+}
+
+/* Seamless infinite scroll keyframes moving right */
+@keyframes ticker-scroll-right {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Seamless infinite scroll keyframes moving left (Fallback option if needed) */
+@keyframes ticker-scroll-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+/* ==========================================================================
+   Latest News & Offers Section Layout
+   ========================================================================== */
+.latest-news-section {
+    padding: 120px 6% 100px 6%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.latest-news-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.latest-news-container {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Individual News Card styling */
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.news-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(29, 44, 71, 0.04);
+    margin-bottom: 25px;
+}
+
+.news-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.news-card:hover .news-img-wrapper img {
+    transform: scale(1.04);
+}
+
+.news-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.news-tag {
+    display: inline-block;
+    background-color: #121e31; /* Theme Navy */
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.news-card-title {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #121e31;
+    text-decoration: none;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
+}
+
+.news-card-title:hover {
+    color: #cdaa7d; /* Brand Gold */
+}
+
+/* Divider & Read More Button Aligned at Bottom */
+.news-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(18, 30, 49, 0.08);
+    margin-top: auto; /* Pushes bottom contents down */
+    margin-bottom: 15px;
+}
+
+.news-readmore-btn {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #121e31;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.news-readmore-btn:hover {
+    color: #cdaa7d; /* Brand Gold */
+}
+
+/* Ticker Footer View More Button */
+.latest-news-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.view-posts-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--navy);
+    padding: 15px 40px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-radius: 2px;
+    border: 1px solid var(--navy);
+}
+
+.view-posts-btn:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 44, 71, 0.08);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .latest-news-section {
+        padding: 80px 6% 60px 6%;
+    }
+
+    .latest-news-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .latest-news-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        max-width: 480px;
+        margin: 0 auto 40px auto;
+    }
+    
+    .news-img-wrapper {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-img-wrapper {
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .latest-news-title {
+        font-size: 26px;
+    }
+    
+    .news-card-title {
+        font-size: 18px;
+    }
+    
+    .news-img-wrapper {
+        height: 220px;
+    }
+}
+
+/* ==========================================================================
+   Premium Scroll Reveal Animations
+   ========================================================================== */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 1.1s cubic-bezier(0.215, 0.61, 0.355, 1.0), 
+                transform 1.1s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+    will-change: transform, opacity;
+}
+
+.reveal-element.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll reveal modifiers */
+.reveal-left {
+    transform: translateX(-35px) translateY(0);
+}
+.reveal-left.reveal-visible {
+    transform: translateX(0) translateY(0);
+}
+
+.reveal-right {
+    transform: translateX(35px) translateY(0);
+}
+.reveal-right.reveal-visible {
+    transform: translateX(0) translateY(0);
+}
+
+/* Staggered delays for items in grid layouts */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+.delay-2 {
+    transition-delay: 0.25s;
+}
+.delay-3 {
+    transition-delay: 0.4s;
+}
+.delay-4 {
+    transition-delay: 0.55s;
+}
+
+/* Disable reveal animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-element {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }

@@ -351,4 +351,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial start
         startAutoPlay();
     }
+
+    // Scroll Reveal Intersection Observer API
+    const revealElements = document.querySelectorAll('.reveal-element');
+    if (revealElements.length > 0) {
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        // Stop observing once visible to optimize CPU
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -80px 0px',
+                threshold: 0.1
+            });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+            // Fallback for older browsers
+            revealElements.forEach(el => el.classList.add('reveal-visible'));
+        }
+    }
 });
