@@ -66,13 +66,30 @@ body {
 
 .top-bar-left {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.top-bar-phones {
+    display: flex;
+    gap: 20px;
 }
 
 .top-bar-item {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.top-bar-item[href] {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.top-bar-item[href]:hover {
+    color: var(--gold);
 }
 
 .top-bar-item svg {
@@ -844,6 +861,17 @@ select.form-control option {
     color: var(--text-light);
 }
 
+.footer-column a.footer-address-link {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-column a.footer-address-link:hover {
+    color: var(--gold);
+}
+
 .footer-column a.contact-link {
     font-size: 14px;
     color: var(--text-dark);
@@ -1370,7 +1398,13 @@ select.form-control option {
 }
 
 .logo-container:hover .logo-img {
-    opacity: 0.85;
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 10px rgba(205, 170, 125, 0.45));
+}
+
+.header-transparent .logo-container:hover .logo-img {
+    transform: scale(1.05);
+    filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(255, 255, 255, 0.45));
 }
 
 /* Home Hero Layout with Overlay Header */
