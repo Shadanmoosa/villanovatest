@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Scroll Reveal Intersection Observer API
-    const revealElements = document.querySelectorAll('.reveal-element');
+    const revealElements = document.querySelectorAll('.reveal-element, .procedures-carousel-track .procedure-card');
     if (revealElements.length > 0) {
         if ('IntersectionObserver' in window) {
             const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -427,5 +427,223 @@ document.addEventListener('DOMContentLoaded', () => {
             // Run once on load to position correctly
             updateParallaxes();
         }
+    }
+
+    // Procedures Carousel (Services) Control
+    const procViewport = document.getElementById('procedures-viewport');
+    const procTrack = document.getElementById('procedures-track');
+    const procPrevBtn = document.getElementById('procedures-prev-btn');
+    const procNextBtn = document.getElementById('procedures-next-btn');
+    const procContainer = document.querySelector('.procedures-carousel-container');
+
+    if (procViewport && procTrack) {
+        const originalCards = Array.from(procTrack.querySelectorAll('.procedure-card'));
+        const totalOriginals = originalCards.length;
+        
+        // Clone first 4 items and append
+        for (let i = 0; i < 4; i++) {
+            const clone = originalCards[i].cloneNode(true);
+            clone.classList.add('carousel-clone');
+            procTrack.appendChild(clone);
+        }
+        // Clone last 4 items and prepend in correct chronological order
+        for (let i = totalOriginals - 1; i >= totalOriginals - 4; i--) {
+            const clone = originalCards[i].cloneNode(true);
+            clone.classList.add('carousel-clone');
+            procTrack.insertBefore(clone, procTrack.firstChild);
+        }
+        
+        const allCards = procTrack.querySelectorAll('.procedure-card');
+        
+        let index = 4; // Start at first original card
+        let autoplayTimer;
+        let isTransitioning = false;
+        let isGridView = false;
+        
+        function getVisibleCount() {
+            if (window.innerWidth <= 480) return 1;
+            if (window.innerWidth <= 768) return 2;
+            if (window.innerWidth <= 1024) return 3;
+            return 4;
+        }
+
+        function initPosition() {
+            if (window.innerWidth <= 480) {
+                procTrack.style.transform = 'none';
+                procTrack.style.transition = 'none';
+                return;
+            }
+            const cardWidth = allCards[0].getBoundingClientRect().width;
+            procTrack.style.transition = 'none';
+            procTrack.style.transform = `translateX(-${index * cardWidth}px)`;
+            procTrack.offsetHeight; // force reflow
+        }
+        
+        initPosition();
+
+        function updateSliderPosition(animate = true) {
+            if (window.innerWidth <= 480) {
+                procTrack.style.transform = 'none';
+                procTrack.style.transition = 'none';
+                return;
+            }
+            
+            if (animate) {
+                procTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            } else {
+                procTrack.style.transition = 'none';
+                procTrack.offsetHeight; // Force reflow to immediately apply transition: none before setting transform
+            }
+            
+            const cardWidth = allCards[0].getBoundingClientRect().width;
+            procTrack.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        function nextSlide() {
+            if (window.innerWidth <= 480 || isTransitioning || isGridView) return;
+            isTransitioning = true;
+            index++;
+            updateSliderPosition(true);
+        }
+
+        function prevSlide() {
+            if (window.innerWidth <= 480 || isTransitioning || isGridView) return;
+            isTransitioning = true;
+            index--;
+            updateSliderPosition(true);
+        }
+
+        procTrack.addEventListener('transitionend', () => {
+            isTransitioning = false;
+            
+            // Seamless wrap-around jump
+            if (index >= 4 + totalOriginals) {
+                index = 4;
+                updateSliderPosition(false);
+            } else if (index < 4) {
+                index = 4 + totalOriginals - (4 - index);
+                updateSliderPosition(false);
+            }
+        });
+
+        if (procNextBtn) {
+            procNextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoplay();
+            });
+        }
+
+        if (procPrevBtn) {
+            procPrevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoplay();
+            });
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (window.innerWidth <= 480 || isGridView) return;
+            autoplayTimer = setInterval(nextSlide, 2500);
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+            }
+        }
+
+        if (procContainer) {
+            procContainer.addEventListener('mouseenter', () => {
+                if (!isGridView) stopAutoplay();
+            });
+            procContainer.addEventListener('mouseleave', () => {
+                if (!isGridView) startAutoplay();
+            });
+        }
+
+        window.addEventListener('resize', () => {
+            if (isGridView) return;
+            if (window.innerWidth <= 480) {
+                procTrack.style.transform = 'none';
+                procTrack.style.transition = 'none';
+                stopAutoplay();
+            } else {
+                initPosition();
+                startAutoplay();
+            }
+        });
+
+        // Touch Dragging Support for Manual Swipe
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        
+        procTrack.addEventListener('touchstart', (e) => {
+            if (window.innerWidth <= 480 || isGridView) return;
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            stopAutoplay();
+        }, { passive: true });
+        
+        procTrack.addEventListener('touchmove', (e) => {
+            if (!isDragging || window.innerWidth <= 480 || isGridView) return;
+            currentX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        procTrack.addEventListener('touchend', () => {
+            if (!isDragging || window.innerWidth <= 480 || isGridView) return;
+            isDragging = false;
+            const diffX = startX - currentX;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            startAutoplay();
+        });
+
+        // View All Services Button Toggle
+        const viewAllBtn = document.getElementById('view-all-services-btn');
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                isGridView = !isGridView;
+                
+                // Fade out track before switching layout for premium visual transition
+                procTrack.style.transition = 'opacity 0.2s ease';
+                procTrack.style.opacity = '0';
+                
+                if (isGridView) {
+                    viewAllBtn.textContent = 'SHOW SLIDER VIEW';
+                    stopAutoplay();
+                } else {
+                    viewAllBtn.textContent = 'VIEW ALL SERVICES';
+                }
+                
+                setTimeout(() => {
+                    if (isGridView) {
+                        procContainer.classList.add('grid-view-active');
+                    } else {
+                        procContainer.classList.remove('grid-view-active');
+                        initPosition();
+                        // Smoothly scroll back to the carousel viewport so the user doesn't lose their place when layout collapses
+                        procViewport.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    
+                    // Force reflow and fade back in
+                    procTrack.offsetHeight;
+                    procTrack.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    procTrack.style.opacity = '1';
+                    
+                    if (!isGridView) {
+                        startAutoplay();
+                    }
+                }, 200);
+            });
+        }
+
+        startAutoplay();
     }
 });

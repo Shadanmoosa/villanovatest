@@ -1999,16 +1999,67 @@ select.form-control option {
     overflow: hidden;
 }
 
-.procedures-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+.procedures-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.procedures-carousel-viewport {
+    overflow: hidden;
     width: 100%;
 }
 
-.procedure-card {
-    position: relative;
+.procedures-carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     width: 100%;
+}
+
+.procedures-carousel-container .carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(29, 44, 71, 0.7);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.procedures-carousel-container:hover .carousel-nav-btn {
+    opacity: 1;
+}
+
+.procedures-carousel-container .carousel-nav-btn:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--text-dark);
+}
+
+.procedures-carousel-container .carousel-nav-btn.prev-btn {
+    left: 20px;
+}
+
+.procedures-carousel-container .carousel-nav-btn.next-btn {
+    right: 20px;
+}
+
+.procedures-carousel-track .procedure-card {
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
     aspect-ratio: 4 / 5;
     overflow: hidden;
 }
@@ -2023,6 +2074,31 @@ select.form-control option {
 
 .procedure-card:hover img {
     transform: scale(1.06);
+}
+
+/* Crop class for images with black side margins */
+.procedure-card img.zoomed-image {
+    transform: scale(1.15);
+}
+
+.procedure-card:hover img.zoomed-image {
+    transform: scale(1.22);
+}
+
+.procedure-card img.zoomed-image-small {
+    transform: scale(1.08);
+}
+
+.procedure-card:hover img.zoomed-image-small {
+    transform: scale(1.15);
+}
+
+.procedure-card img.zoomed-image-large {
+    transform: scale(1.25);
+}
+
+.procedure-card:hover img.zoomed-image-large {
+    transform: scale(1.32);
 }
 
 .procedure-overlay {
@@ -2091,14 +2167,31 @@ select.form-control option {
 }
 
 /* Responsive Overrides for Procedures Section */
+@media (max-width: 1024px) {
+    .procedures-carousel-track .procedure-card {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
 @media (max-width: 768px) {
     .procedures-categories-section {
         padding: 0 0 60px 0;
     }
-    .procedures-container {
-        grid-template-columns: 1fr;
+    .procedures-carousel-container .carousel-nav-btn {
+        opacity: 1; /* always show navigation controls on touch/tablet screens */
+        width: 40px;
+        height: 40px;
     }
-    .procedure-card {
+    .procedures-carousel-container .carousel-nav-btn.prev-btn {
+        left: 10px;
+    }
+    .procedures-carousel-container .carousel-nav-btn.next-btn {
+        right: 10px;
+    }
+    .procedures-carousel-track .procedure-card {
+        flex: 0 0 50%;
+        max-width: 50%;
         aspect-ratio: 4 / 3;
     }
     .procedure-title {
@@ -2110,6 +2203,122 @@ select.form-control option {
         transform: translateY(0);
         pointer-events: auto;
         margin-top: 0;
+    }
+}
+
+/* Grid View Active state for Procedures Carousel */
+.procedures-carousel-container.grid-view-active {
+    align-items: flex-start;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+}
+
+.procedures-carousel-container.grid-view-active .procedures-carousel-viewport {
+    overflow: visible;
+}
+
+.procedures-carousel-container.grid-view-active .procedures-carousel-track {
+    flex-wrap: wrap !important;
+    justify-content: center;
+    transform: none !important;
+    gap: 40px 30px; /* 40px vertical gap, 30px horizontal gap */
+    padding: 20px 0;
+}
+
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card {
+    flex: 0 0 calc((100% - 60px) / 3) !important;
+    max-width: calc((100% - 60px) / 3) !important;
+    aspect-ratio: 4 / 5;
+}
+
+.procedures-carousel-container.grid-view-active .carousel-clone {
+    display: none !important;
+}
+
+.procedures-carousel-container.grid-view-active .carousel-nav-btn {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Staggered Fade In Animation for Grid View (with X-axis slide/glide) */
+@keyframes gridCardFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px) translateY(10px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) scale(1);
+    }
+}
+
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone) {
+    animation: gridCardFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(5) { animation-delay: 0.05s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(6) { animation-delay: 0.1s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(7) { animation-delay: 0.15s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(8) { animation-delay: 0.2s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(9) { animation-delay: 0.25s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(10) { animation-delay: 0.3s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(11) { animation-delay: 0.35s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(12) { animation-delay: 0.4s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(13) { animation-delay: 0.45s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(14) { animation-delay: 0.5s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(15) { animation-delay: 0.55s; }
+.procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card:not(.carousel-clone):nth-child(16) { animation-delay: 0.6s; }
+
+/* Responsive adjustments for Grid View on Tablet */
+@media (max-width: 1024px) {
+    .procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card {
+        flex: 0 0 calc((100% - 30px) / 2) !important;
+        max-width: calc((100% - 30px) / 2) !important;
+    }
+}
+
+.carousel-bottom-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 480px) {
+    .carousel-bottom-actions {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-clone {
+        display: none !important;
+    }
+    .procedures-carousel-container .carousel-nav-btn {
+        display: none !important;
+    }
+    .procedures-carousel-track {
+        flex-direction: column !important;
+        transform: none !important;
+    }
+    .procedures-carousel-track .procedure-card {
+        flex: 0 0 auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        aspect-ratio: 4 / 3;
+        
+        /* Mobile Scroll Reveal */
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                    transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        will-change: transform, opacity;
+    }
+    .procedures-carousel-track .procedure-card.reveal-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
 }
 

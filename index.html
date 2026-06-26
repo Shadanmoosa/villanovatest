@@ -57,7 +57,8 @@
         </a>
 
         <div class="top-bar-right">
-            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn">BOOK A VISIT</a>
+            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn">BOOK A
+                VISIT</a>
         </div>
     </div>
 
@@ -106,7 +107,8 @@
                 <li><a href="blog.html">BLOG</a></li>
                 <li><a href="doctors.html#booking-form-section">CONTACTS</a></li>
                 <li class="mobile-only-nav-item">
-                    <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn-mobile">BOOK A VISIT</a>
+                    <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank"
+                        class="book-visit-btn-mobile">BOOK A VISIT</a>
                 </li>
             </ul>
         </nav>
@@ -172,7 +174,10 @@
             <div class="about-cosmetic-content reveal-element reveal-right">
                 <span class="about-tag">WELCOME TO ROYAL VILLANOVA</span>
                 <h2 class="about-title">COSMETIC AND ONE DAY SURGICAL CENTER</h2>
-                <p class="about-desc">Royal Villanova Cosmetic and One Day Surgical Center is committed to providing high-quality medical and surgical care in a professional, patient-focused environment. Our team combines clinical expertise, modern facilities, and personalized service to support you at every stage of your care journey.</p>
+                <p class="about-desc">Royal Villanova Cosmetic and One Day Surgical Center is committed to providing
+                    high-quality medical and surgical care in a professional, patient-focused environment. Our team
+                    combines clinical expertise, modern facilities, and personalized service to support you at every
+                    stage of your care journey.</p>
                 <a href="doctors.html" class="about-btn">ABOUT THE CLINIC</a>
             </div>
         </div>
@@ -373,28 +378,123 @@
 
     <!-- CATEGORIES / PROCEDURES SECTION (3rd Part) -->
     <section class="procedures-categories-section marble-bg">
-        <div class="procedures-container">
-            <div class="procedure-card reveal-element delay-1">
-                <img src="images/face1.jpg" alt="Face Procedures">
-                <div class="procedure-overlay">
-                    <h3 class="procedure-title">FACE</h3>
-                    <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+        <div class="procedures-carousel-container reveal-element">
+            <!-- Navigation Buttons -->
+            <button class="carousel-nav-btn prev-btn" id="procedures-prev-btn" aria-label="Previous Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="procedures-carousel-viewport" id="procedures-viewport">
+                <div class="procedures-carousel-track" id="procedures-track">
+                    <!-- 1 Plastic Surgery -->
+                    <div class="procedure-card">
+                        <img src="images/plasticsurgery.jpg" alt="Plastic Surgery">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">PLASTIC SURGERY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 2 General Surgery -->
+                    <div class="procedure-card">
+                        <img src="images/GENERALSURGERY.jpg" alt="General Surgery">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">GENERAL SURGERY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 3 Dermatology and Aesthetics -->
+                    <div class="procedure-card">
+                        <img src="images/dhermath.jpg" alt="Dermatology and Aesthetics">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">DERMATOLOGY & AESTHETICS</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 4 Beauty Therapy -->
+                    <div class="procedure-card">
+                        <img src="images/Beauty.jpg" alt="Beauty Therapy">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">BEAUTY THERAPY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 5 Laser Hair Removal -->
+                    <div class="procedure-card">
+                        <img src="images/laser.jpg" alt="Laser Hair Removal">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">LASER HAIR REMOVAL</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 6 Dentistry -->
+                    <div class="procedure-card">
+                        <img src="images/dental.jpg" alt="Dentistry" class="zoomed-image-small">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">DENTISTRY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 7 Weight Loss And Dietetics -->
+                    <div class="procedure-card">
+                        <img src="images/weightloss.jpg" alt="Weight Loss And Dietetics" class="zoomed-image">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">WEIGHT LOSS & DIETETICS</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 8 Internal Medicine -->
+                    <div class="procedure-card">
+                        <img src="images/InternalMedicine.jpg" alt="Internal Medicine">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">INTERNAL MEDICINE</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 9 Physiotherapy -->
+                    <div class="procedure-card">
+                        <img src="images/Physiotherapy.jpg" alt="Physiotherapy">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">PHYSIOTHERAPY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 10 Ear Nose & Throat -->
+                    <div class="procedure-card">
+                        <img src="images/earnore.jpg" alt="Ear Nose & Throat">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">EAR NOSE & THROAT</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 11 Andrology & Urology -->
+                    <div class="procedure-card">
+                        <img src="images/AndrologyUrology.jpg" alt="Andrology & Urology">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">ANDROLOGY & UROLOGY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
+                    <!-- 12 Obstetric and Gynecology -->
+                    <div class="procedure-card">
+                        <img src="images/ObstetricGynec.jpg" alt="Obstetric and Gynecology">
+                        <div class="procedure-overlay">
+                            <h3 class="procedure-title">OBSTETRIC & GYNECOLOGY</h3>
+                            <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="procedure-card reveal-element delay-2">
-                <img src="images/body1.jpg" alt="Body Procedures">
-                <div class="procedure-overlay">
-                    <h3 class="procedure-title">BODY</h3>
-                    <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
-                </div>
-            </div>
-            <div class="procedure-card reveal-element delay-3">
-                <img src="images/filler1.jpg" alt="Non-Surgical Procedures">
-                <div class="procedure-overlay">
-                    <h3 class="procedure-title">NON-SURGICAL</h3>
-                    <a href="doctors.html" class="procedure-btn">VIEW PROCEDURES</a>
-                </div>
-            </div>
+
+            <button class="carousel-nav-btn next-btn" id="procedures-next-btn" aria-label="Next Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="carousel-bottom-actions">
+            <a href="#" id="view-all-services-btn" class="about-btn">VIEW ALL SERVICES</a>
         </div>
     </section>
 
@@ -410,7 +510,7 @@
                     natural facial harmony. Let us help you highlight your most beautiful features by smoothing
                     wrinkles, lines, and folds, for a more vital, dynamic, and youthful appearance that looks completely
                     natural.</p>
-                <a href="doctors.html" class="comparison-btn">FACIAL PROCEDURES</a>
+                <a href="doctors.html" class="about-btn">FACIAL PROCEDURES</a>
             </div>
 
             <!-- Right: Image slider comparison -->
@@ -795,7 +895,8 @@
             <h2 class="consultation-banner-title">NOT SURE WHICH PROCEDURE IS RIGHT FOR YOU?</h2>
             <p class="consultation-banner-desc">Schedule a consultation with our expert providers to discuss your
                 aesthetic needs.</p>
-            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="consultation-banner-btn">REQUEST A CONSULTATION</a>
+            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank"
+                class="consultation-banner-btn">REQUEST A CONSULTATION</a>
         </div>
     </section>
 
@@ -853,7 +954,8 @@
                 </div>
                 <div class="news-card-content">
                     <span class="news-tag">Inspiration</span>
-                    <a href="blog.html" class="news-card-title">Sculpting Beauty: The Art of Face and Body Contouring</a>
+                    <a href="blog.html" class="news-card-title">Sculpting Beauty: The Art of Face and Body
+                        Contouring</a>
                     <div class="news-divider"></div>
                     <a href="blog.html" class="news-readmore-btn">READ MORE</a>
                 </div>
@@ -973,7 +1075,8 @@
                 <!-- Address Column -->
                 <div class="footer-column left">
                     <h4>Address</h4>
-                    <p><a href="https://share.google/lkpmBXyH2SyP2eWAj" target="_blank" class="footer-address-link">206 Block B, Hudaiba Awards Building, Al Mina Rd, Dubai, UAE</a></p>
+                    <p><a href="https://share.google/lkpmBXyH2SyP2eWAj" target="_blank" class="footer-address-link">206
+                            Block B, Hudaiba Awards Building, Al Mina Rd, Dubai, UAE</a></p>
                     <p class="sub-text">Mon-Fri: 9am - 6pm<br>Sat: By Appointment Only</p>
                 </div>
 
