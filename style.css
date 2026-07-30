@@ -712,26 +712,120 @@ select.form-control option {
     padding: 90px 0 0 0;
     background-color: var(--white);
     text-align: center;
+    overflow: hidden;
 }
 
-.instagram-section h3 {
-    font-size: 11px;
-    letter-spacing: 0.25em;
+.instagram-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.instagram-section-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--text-dark);
-    margin-bottom: 40px;
-    font-weight: 600;
+    text-align: center;
+    margin: 0;
 }
 
-.instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+.instagram-section-title a {
+    color: var(--navy);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    transition: color 0.3s ease;
+}
+
+.instagram-section-title a:hover {
+    color: var(--gold);
+}
+
+.instagram-title-icon {
+    width: 34px;
+    height: 34px;
+    stroke: var(--navy);
+    transition: stroke 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.instagram-section-title a:hover .instagram-title-icon {
+    stroke: var(--gold);
+    transform: scale(1.1);
+}
+
+.instagram-section-subtitle {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.instagram-section-subtitle a {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: 0.08em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram-section-subtitle a:visited,
+.instagram-section-subtitle a:active {
+    color: var(--text-dark) !important;
+    text-decoration: none !important;
+}
+
+.instagram-section-subtitle a:hover {
+    color: var(--gold) !important;
+}
+
+.instagram-subtitle-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-dark) !important;
+    transition: stroke 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.instagram-section-subtitle a:hover .instagram-subtitle-icon {
+    stroke: var(--gold) !important;
+    transform: scale(1.1);
+}
+
+
+.instagram-slider-wrapper {
     width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.instagram-track {
+    display: flex;
+    width: max-content;
+    animation: instagramScroll 30s linear infinite;
+}
+
+.instagram-slider-wrapper:hover .instagram-track {
+    animation-play-state: paused;
 }
 
 .instagram-item {
+    display: block;
+    flex: 0 0 20vw;
+    width: 20vw;
+    height: 20vw;
     position: relative;
-    padding-top: 100%; /* Square aspect ratio */
     overflow: hidden;
     cursor: pointer;
 }
@@ -759,6 +853,15 @@ select.form-control option {
     justify-content: center;
     transition: var(--transition);
     color: var(--white);
+}
+
+@keyframes instagramScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .instagram-item:hover img {
@@ -1731,12 +1834,10 @@ select.form-control option {
         gap: 25px;
     }
     
-    .instagram-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .instagram-item:nth-child(n+7) {
-        display: none;
+    .instagram-item {
+        flex: 0 0 33.333vw;
+        width: 33.333vw;
+        height: 33.333vw;
     }
 }
 
@@ -1975,8 +2076,10 @@ select.form-control option {
         font-size: 15px;
     }
     
-    .instagram-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .instagram-item {
+        flex: 0 0 50vw;
+        width: 50vw;
+        height: 50vw;
     }
 
     /* Mobile overrides for cosmetic about block */
@@ -4649,9 +4752,23 @@ select.form-control option {
         padding: 80px 6% 60px 6%;
     }
 
-    .latest-news-title {
+    .latest-news-title,
+    .instagram-section-title {
         font-size: 32px;
+    }
+
+    .latest-news-title,
+    .instagram-section-header {
         margin-bottom: 40px;
+    }
+
+    .instagram-title-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .instagram-section-subtitle a {
+        font-size: 15px;
     }
 
     .latest-news-container {
@@ -4673,8 +4790,18 @@ select.form-control option {
 }
 
 @media (max-width: 480px) {
-    .latest-news-title {
+    .latest-news-title,
+    .instagram-section-title {
         font-size: 26px;
+    }
+
+    .instagram-title-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .instagram-section-subtitle a {
+        font-size: 14px;
     }
     
     .news-card-title {
