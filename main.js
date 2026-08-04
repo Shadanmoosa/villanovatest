@@ -646,4 +646,236 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startAutoplay();
     }
+
+    // ==========================================================================
+    // INTERACTIVE DOCTORS SECTION (Filtering & Quick View Modal)
+    // ==========================================================================
+    const doctorData = {
+        'doc-1': {
+            name: 'DR. PIERO CRABAI',
+            role: 'PLASTIC SURGERY SPECIALIST',
+            badge: 'ITALIAN BOARD CERTIFIED',
+            img: 'images/villanovadoctors/DRPIEROCRABAI.jpg',
+            bio: 'Dr. Piero Crabai is an internationally renowned plastic surgeon with over 25 years of surgical excellence in Dubai and Europe. He combines artistic vision with cutting-edge surgical techniques to achieve natural, age-defying results.',
+            exp: '25+ Years Experience',
+            lang: 'English, Italian, French',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Piero%20Crabai'
+        },
+        'doc-2': {
+            name: 'DR. MAJED',
+            role: 'DENTAL SPECIALIST',
+            badge: 'DENTISTRY & SMILE DESIGN',
+            img: 'images/villanovadoctors/drmajed.jpg',
+            bio: 'Dr. Majed specializes in advanced dentistry, smile design, veneers, implants, and comprehensive oral aesthetic rehabilitation.',
+            exp: '15+ Years Experience',
+            lang: 'English, Arabic',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Majed'
+        },
+        'doc-3': {
+            name: 'DR. MOHAMMED ABEDIAN',
+            role: 'GENERAL SURGERY SPECIALIST',
+            badge: 'GENERAL SURGEON',
+            img: 'images/villanovadoctors/DrMohammedAbedian.jpg',
+            bio: 'Dr. Mohammed Abedian is a consultant general surgeon specializing in advanced laparoscopic procedures, abdominal surgery, and surgical wellness.',
+            exp: '18+ Years Experience',
+            lang: 'English, Arabic, Persian',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Mohammed%20Abedian'
+        },
+        'doc-4': {
+            name: 'DR. HUSAIN HAIDAR',
+            role: 'GENERAL SURGERY SPECIALIST',
+            badge: 'GENERAL SURGEON',
+            img: 'images/villanovadoctors/drhusainhaidar.jpg',
+            bio: 'Dr. Husain Haidar provides senior general surgical care focusing on minimally invasive techniques, abdominal interventions, and patient recovery.',
+            exp: '16+ Years Experience',
+            lang: 'English, Arabic',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Husain%20Haidar'
+        },
+        'doc-5': {
+            name: 'DR. HAMED ABASI',
+            role: 'ENT SPECIALIST',
+            badge: 'EAR, NOSE & THROAT',
+            img: 'images/villanovadoctors/drhamedabasi.jpg',
+            bio: 'Dr. Hamed Abasi is an Otolaryngologist (ENT Specialist) expert in sinus care, nasal aesthetics, throat treatments, and head & neck surgery.',
+            exp: '14+ Years Experience',
+            lang: 'English, Persian, Arabic',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Hamed%20Abasi'
+        },
+        'doc-6': {
+            name: 'DR. OMID',
+            role: 'AESTHETIC DOCTOR',
+            badge: 'AESTHETIC MEDICINE',
+            img: 'images/villanovadoctors/dromid.jpg',
+            bio: 'Dr. Omid specializes in non-surgical facial aesthetics, dermal fillers, neuromodulators, skin rejuvenation, and personalized anti-aging care.',
+            exp: '12+ Years Experience',
+            lang: 'English, Persian',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Omid'
+        },
+        'doc-7': {
+            name: 'DR. SEREEN AL-HELO',
+            role: 'DENTAL SPECIALIST',
+            badge: 'COSMETIC DENTISTRY',
+            img: 'images/villanovadoctors/DrSereenAlhelo.jpg',
+            bio: 'Dr. Sereen Al-Helo is a skilled dental specialist dedicated to smile design, teeth whitening, veneers, and aesthetic dental restoration.',
+            exp: '15+ Years Experience',
+            lang: 'English, Arabic',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Sereen%20Al-Helo'
+        },
+        'doc-8': {
+            name: 'DR. NAYEREH KABOLI',
+            role: 'NUTRITION SPECIALIST',
+            badge: 'CLINICAL NUTRITIONIST',
+            img: 'images/villanovadoctors/drnayereKaboli.jpg',
+            bio: 'Dr. Nayereh Kaboli provides clinical nutritional therapy, metabolic body composition analysis, personalized dietary planning, and health optimization.',
+            exp: '14+ Years Experience',
+            lang: 'English, Persian',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Nayereh%20Kaboli'
+        },
+        'doc-9': {
+            name: 'DR. ABAS RAHIMI',
+            role: 'PHYSIOTHERAPY SPECIALIST',
+            badge: 'PHYSIOTHERAPEUTIC MEDICINE',
+            img: 'images/villanovadoctors/drabasrahimi.jpg',
+            bio: 'Dr. Abas Rahimi is a consultant physiotherapist specializing in musculoskeletal rehabilitation, sports injuries, posture correction, and physical wellness.',
+            exp: '17+ Years Experience',
+            lang: 'English, Persian, Arabic',
+            linkedin: 'https://linkedin.com',
+            instagram: 'https://instagram.com',
+            website: 'https://villanovamedical.ae',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Abas%20Rahimi'
+        }
+    };
+
+    // Filter Category Tabs logic
+    const filterBtns = document.querySelectorAll('.v-filter-btn');
+    const doctorCards = document.querySelectorAll('.v-doctor-card');
+
+    if (filterBtns.length > 0 && doctorCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                doctorCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.92)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+
+    // Touch device tap toggle support for cards
+    doctorCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.v-btn-quickview') || e.target.closest('.v-btn-book') || e.target.closest('.v-social-pill')) {
+                return; // Let native button click handle
+            }
+            if (window.innerWidth <= 1024) {
+                const isActive = card.classList.contains('hover-active');
+                doctorCards.forEach(c => c.classList.remove('hover-active'));
+                if (!isActive) card.classList.add('hover-active');
+            }
+        });
+    });
+
+    // Quick View Modal Controller
+    const modal = document.getElementById('v-doctor-modal');
+    if (modal) {
+        const modalOverlay = modal.querySelector('.v-modal-overlay');
+        const modalClose = modal.querySelector('.v-modal-close');
+        
+        const modalImg = document.getElementById('v-modal-img');
+        const modalBadge = document.getElementById('v-modal-badge');
+        const modalName = document.getElementById('v-modal-name');
+        const modalRole = document.getElementById('v-modal-role');
+        const modalBio = document.getElementById('v-modal-bio');
+        const modalExp = document.getElementById('v-modal-exp');
+        const modalLang = document.getElementById('v-modal-lang');
+        const modalLinkedin = document.getElementById('v-modal-linkedin');
+        const modalInstagram = document.getElementById('v-modal-instagram');
+        const modalWebsite = document.getElementById('v-modal-website');
+        const modalBookBtn = document.getElementById('v-modal-book-btn');
+
+        const openModal = (docId) => {
+            const data = doctorData[docId];
+            if (!data) return;
+
+            if (modalImg) modalImg.src = data.img;
+            if (modalBadge) modalBadge.textContent = data.badge;
+            if (modalName) modalName.textContent = data.name;
+            if (modalRole) modalRole.textContent = data.role;
+            if (modalBio) modalBio.textContent = data.bio;
+            if (modalExp) modalExp.textContent = data.exp;
+            if (modalLang) modalLang.textContent = data.lang;
+
+            if (modalLinkedin) modalLinkedin.href = data.linkedin;
+            if (modalInstagram) modalInstagram.href = data.instagram;
+            if (modalWebsite) modalWebsite.href = data.website;
+            if (modalBookBtn) modalBookBtn.href = data.whatsapp;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        document.querySelectorAll('.v-btn-quickview').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const docId = btn.getAttribute('data-doc-id');
+                openModal(docId);
+            });
+        });
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
+

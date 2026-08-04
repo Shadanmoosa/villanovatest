@@ -932,23 +932,27 @@
         </div>
     </section>
 
-    <!-- DOCTOR BIO SECTION (Meet Dr. Hoffman) -->
-    <section class="doctor-bio-section">
+    <!-- DOCTOR BIO & TEAM SECTION (Merged Theme) -->
+    <section class="doctor-bio-section" id="doctors-team-section">
+
+        <!-- 1. Featured Doctor: Dr. Piero Crabai -->
         <div class="doctor-bio-container">
             <!-- Left Column: Biography Content -->
             <div class="doctor-bio-content reveal-element reveal-left">
                 <span class="doctor-bio-tag">MEET DR. PIERO CRABAI</span>
-                <h2 class="doctor-bio-title">BOARD CERTIFIED, WORLD-RENOWNED PLASTIC SURGEON</h2>
-                <p class="doctor-bio-desc">Known as a specialist facial plastic surgeon in Beverly Hills, Dr. Hoffman is
-                    sought after by patients from around the world for help in correcting some of the most challenging
-                    complications.</p>
-                <a href="" class="doctor-bio-btn">MEET THE TEAM</a>
+                <h2 class="doctor-bio-title">ITALIAN BOARD-CERTIFIED PLASTIC SURGEON</h2>
+                <p class="doctor-bio-desc">Dr Piero Crabai is an internationally renowed plastic surgeon and
+                    he combines
+                    his experience and artistic vision with the most advanced technologies to offer patients
+                    excellence
+                    in cosmetic procedures in Dubai </p>
+                <a href="#doctors-team-grid" class="doctor-bio-btn">MEET THE TEAM</a>
             </div>
 
             <!-- Right Column: Doctor Portrait & Play/Signature Overlays -->
             <div class="doctor-bio-image-wrapper reveal-element reveal-right">
                 <div class="doctor-img-container">
-                    <img src="images/drimage.jpg" alt="Dr. Hoffman" class="doctor-img">
+                    <img src="images/villanovadoctors/DRPIEROCRABAI.jpg" alt="Dr. Piero Crabai" class="doctor-img">
                 </div>
                 <!-- Signature overlay (top right) -->
                 <img src="images/signature.svg" alt="Signature" class="doctor-signature">
@@ -965,7 +969,536 @@
             </div>
         </div>
 
-        <!-- Bottom Row: Counter Statistics -->
+        <!-- 2. Doctors & Specialists Grid -->
+        <div class="v-doctors-container" id="doctors-team-grid" style="margin-top: 100px; margin-bottom: 90px;">
+            <!-- Section Header -->
+            <div class="services-section-header reveal-element">
+                <p class="services-section-tag" style="color: var(--gold);">MEET OUR EXPERTS</p>
+                <h2 class="services-section-title" style="color: var(--white);">OUR DOCTORS & SPECIALISTS
+                </h2>
+                <p class="services-section-desc" style="color: rgba(255, 255, 255, 0.75);">Our clinic brings
+                    together world-renowned board-certified plastic surgeons, dermatologists, and aesthetic
+                    specialists committed to artistic precision and exceptional care.</p>
+            </div>
+
+            <!-- Filter Category Tabs -->
+            <!-- <div class="v-doctors-filter-bar reveal-element">
+                <button class="v-filter-btn active" data-filter="all">ALL SPECIALISTS</button>
+                <button class="v-filter-btn" data-filter="plastic">PLASTIC SURGERY</button>
+                <button class="v-filter-btn" data-filter="dermatology">DERMATOLOGY & AESTHETICS</button>
+                <button class="v-filter-btn" data-filter="surgery">GENERAL SURGERY</button>
+                <button class="v-filter-btn" data-filter="dental">DENTISTRY</button>
+            </div> -->
+
+            <!-- Doctors 3-Column Grid -->
+            <div class="v-doctors-grid reveal-element">
+                <!-- Card 1: Dr. Piero Crabai -->
+                <div class="v-doctor-card" data-category="plastic" data-id="doc-1">
+                    <img src="images/villanovadoctors/DRPIEROCRABAI.jpg" alt="Dr. Piero Crabai" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. PIERO CRABAI</h3>
+                            <p class="v-doctor-role">PLASTIC SURGERY SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-1">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Piero%20Crabai"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Dr. Majed -->
+                <div class="v-doctor-card" data-category="dental" data-id="doc-2">
+                    <img src="images/villanovadoctors/drmajed.jpg" alt="Dr. Majed" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. MAJED</h3>
+                            <p class="v-doctor-role">DENTAL SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-2">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Majed"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Dr. Mohammed Abedian -->
+                <div class="v-doctor-card" data-category="surgery" data-id="doc-3">
+                    <img src="images/villanovadoctors/DrMohammedAbedian.jpg" alt="Dr. Mohammed Abedian" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. MOHAMMED ABEDIAN</h3>
+                            <p class="v-doctor-role">GENERAL SURGERY SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-3">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Mohammed%20Abedian"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Dr. Husain Haidar -->
+                <div class="v-doctor-card" data-category="surgery" data-id="doc-4">
+                    <img src="images/villanovadoctors/drhusainhaidar.jpg" alt="Dr. Husain Haidar" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. HUSAIN HAIDAR</h3>
+                            <p class="v-doctor-role">GENERAL SURGERY SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-4">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Husain%20Haidar"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Dr. Hamed Abasi -->
+                <div class="v-doctor-card" data-category="ent" data-id="doc-5">
+                    <img src="images/villanovadoctors/drhamedabasi.jpg" alt="Dr. Hamed Abasi" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. HAMED ABASI</h3>
+                            <p class="v-doctor-role">ENT SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-5">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Hamed%20Abasi"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Dr. Omid -->
+                <div class="v-doctor-card" data-category="dermatology" data-id="doc-6">
+                    <img src="images/villanovadoctors/dromid.jpg" alt="Dr. Omid" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. OMID</h3>
+                            <p class="v-doctor-role">AESTHETIC DOCTOR</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-6">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Omid"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Dr. Sereen Al-Helo -->
+                <div class="v-doctor-card" data-category="dental" data-id="doc-7">
+                    <img src="images/villanovadoctors/DrSereenAlhelo.jpg" alt="Dr. Sereen Al-Helo" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. SEREEN AL-HELO</h3>
+                            <p class="v-doctor-role">DENTAL SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-7">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Sereen%20Al-Helo"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Dr. Nayereh Kaboli -->
+                <div class="v-doctor-card" data-category="nutrition" data-id="doc-8">
+                    <img src="images/villanovadoctors/drnayereKaboli.jpg" alt="Dr. Nayereh Kaboli" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. NAYEREH KABOLI</h3>
+                            <p class="v-doctor-role">NUTRITION SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-8">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Nayereh%20Kaboli"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Dr. Abas Rahimi -->
+                <div class="v-doctor-card" data-category="physiotherapy" data-id="doc-9">
+                    <img src="images/villanovadoctors/drabasrahimi.jpg" alt="Dr. Abas Rahimi" class="v-doctor-img">
+                    <div class="v-doctor-overlay">
+                        <div class="v-doctor-meta">
+                            <h3 class="v-doctor-name">DR. ABAS RAHIMI</h3>
+                            <p class="v-doctor-role">PHYSIOTHERAPY SPECIALIST</p>
+                        </div>
+
+                        <div class="v-doctor-hover-content">
+                            <div class="v-doctor-socials">
+                                <a href="https://linkedin.com" target="_blank" class="v-social-pill"
+                                    aria-label="LinkedIn">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="v-social-pill"
+                                    aria-label="Instagram">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>INSTAGRAM</span>
+                                </a>
+                                <a href="https://villanovamedical.ae" target="_blank" class="v-social-pill"
+                                    aria-label="Website">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <span>WEBSITE</span>
+                                </a>
+                            </div>
+
+                            <div class="v-doctor-actions">
+                                <button class="v-btn-quickview" data-doc-id="doc-9">VIEW PROFILE</button>
+                                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Abas%20Rahimi"
+                                    target="_blank" class="v-btn-book">BOOK CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Bottom Row: Counter Statistics -->
         <div class="doctor-stats-container reveal-element">
             <div class="stat-item">
                 <span class="stat-number">30+</span>
@@ -986,11 +1519,13 @@
         </div>
     </section>
 
+
     <!-- CONSULTATION BANNER SECTION -->
     <section class="consultation-banner-section">
         <div class="consultation-banner-content reveal-element">
             <h2 class="consultation-banner-title">NOT SURE WHICH PROCEDURE IS RIGHT FOR YOU?</h2>
-            <p class="consultation-banner-desc">Schedule a consultation with our expert providers to discuss your
+            <p class="consultation-banner-desc">Schedule a consultation with our expert providers to discuss
+                your
                 aesthetic needs.</p>
             <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank"
                 class="consultation-banner-btn">REQUEST A CONSULTATION</a>
@@ -1038,7 +1573,8 @@
                 </div>
                 <div class="news-card-content">
                     <span class="news-tag">Aesthetics</span>
-                    <a href="blog.html" class="news-card-title">Radiance Revival: Decoding Vitamin Infusion Magic</a>
+                    <a href="blog.html" class="news-card-title">Radiance Revival: Decoding Vitamin Infusion
+                        Magic</a>
                     <div class="news-divider"></div>
                     <a href="blog.html" class="news-readmore-btn">READ MORE</a>
                 </div>
@@ -1065,7 +1601,8 @@
                 </div>
                 <div class="news-card-content">
                     <span class="news-tag">News</span>
-                    <a href="blog.html" class="news-card-title">Best Skin Treatments for Tight and Glowing Skin</a>
+                    <a href="blog.html" class="news-card-title">Best Skin Treatments for Tight and Glowing
+                        Skin</a>
                     <div class="news-divider"></div>
                     <a href="blog.html" class="news-readmore-btn">READ MORE</a>
                 </div>
@@ -1323,7 +1860,8 @@
                         <a href="#" aria-label="Facebook">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                </path>
                             </svg>
                         </a>
                         <a href="#" aria-label="Instagram">
@@ -1351,9 +1889,52 @@
                 <p>VILLANOVA - BY NEXTDOT SOLTUION</p>
             </div>
         </div>
-    </footer>
+        <!-- DOCTOR DETAIL QUICK-VIEW MODAL -->
+        <div id="v-doctor-modal" class="v-doctor-modal">
+            <div class="v-modal-overlay"></div>
+            <div class="v-modal-card">
+                <button class="v-modal-close" aria-label="Close modal">&times;</button>
+                <div class="v-modal-body">
+                    <div class="v-modal-image-col">
+                        <img id="v-modal-img" src="" alt="Doctor Photo">
+                        <span id="v-modal-badge" class="v-modal-badge"></span>
+                    </div>
+                    <div class="v-modal-info-col">
+                        <h3 id="v-modal-name" class="v-modal-name"></h3>
+                        <p id="v-modal-role" class="v-modal-role"></p>
+                        <div class="v-modal-divider"></div>
+                        <p id="v-modal-bio" class="v-modal-bio"></p>
 
-    <script src="main.js"></script>
+                        <div class="v-modal-details-grid">
+                            <div class="v-detail-item">
+                                <span class="v-detail-label">Experience:</span>
+                                <span id="v-modal-exp" class="v-detail-val"></span>
+                            </div>
+                            <div class="v-detail-item">
+                                <span class="v-detail-label">Languages:</span>
+                                <span id="v-modal-lang" class="v-detail-val"></span>
+                            </div>
+                            <div class="v-detail-item">
+                                <span class="v-detail-label">Location:</span>
+                                <span class="v-detail-val">Villanova Clinic, Dubai</span>
+                            </div>
+                        </div>
+
+                        <div class="v-modal-socials">
+                            <span class="v-socials-label">Connect:</span>
+                            <a id="v-modal-linkedin" href="#" target="_blank" class="v-modal-social-link">LinkedIn</a>
+                            <a id="v-modal-instagram" href="#" target="_blank" class="v-modal-social-link">Instagram</a>
+                            <a id="v-modal-website" href="#" target="_blank" class="v-modal-social-link">Website</a>
+                        </div>
+
+                        <a id="v-modal-book-btn" href="#" target="_blank" class="v-modal-book-btn">BOOK AN
+                            APPOINTMENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
 </body>
 
 </html>
