@@ -5351,24 +5351,99 @@ select.form-control option {
 @media (max-width: 1024px) {
     .v-doctors-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     .v-doctor-card {
-        height: 480px;
+        height: 440px;
+        min-width: 0;
     }
     .v-doctor-meta {
-        transform: translateY(140px);
+        transform: translateY(60px);
     }
 }
 
 @media (max-width: 768px) {
-    .v-doctors-grid {
-        grid-template-columns: 1fr;
-    }
     .v-doctors-section {
-        padding: 60px 5%;
+        padding: 50px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .v-doctors-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 5% !important; /* Perfect symmetrical left & right margin */
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    .v-doctors-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        width: 100% !important;
+        max-width: 420px !important; /* Centered capped grid for clean vertical flow */
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
     .v-doctor-card {
-        height: 460px;
+        width: 100% !important;
+        height: 450px !important;
+        min-height: auto !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    .v-doctor-overlay {
+        padding: 30px 20px !important;
+    }
+    .v-doctor-meta {
+        transform: translateY(0) !important; /* Elevated text so it sits at ideal height, not pushed down */
+    }
+    .v-doctor-card:hover .v-doctor-meta,
+    .v-doctor-card.hover-active .v-doctor-meta {
+        transform: translateY(-12px) !important;
+    }
+    .v-doctor-name {
+        font-size: 18px !important;
+        letter-spacing: 0.15em !important;
+        margin-bottom: 6px !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    .v-doctor-role {
+        font-size: 9.5px !important;
+        letter-spacing: 0.18em !important;
+        word-break: break-word;
+    }
+    .v-doctor-hover-content {
+        margin-top: 12px;
+    }
+    .v-doctor-socials {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    .v-social-pill {
+        padding: 6px 10px;
+        font-size: 8.5px;
+        letter-spacing: 0.12em;
+        gap: 4px;
+    }
+    .v-social-pill span {
+        display: inline;
+    }
+    .v-doctor-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+    .v-btn-quickview,
+    .v-btn-book {
+        padding: 9px 16px;
+        font-size: 8.5px;
+        letter-spacing: 0.15em;
+        width: auto;
+        text-align: center;
+        box-sizing: border-box;
     }
     .v-modal-body {
         flex-direction: column;
@@ -5383,4 +5458,46 @@ select.form-control option {
         padding: 25px 20px;
     }
 }
+
+@media (max-width: 480px) {
+    .v-doctors-container {
+        padding: 0 6% !important; /* Generous equal left & right margin on small phones */
+    }
+    .v-doctors-grid {
+        gap: 25px !important;
+    }
+    .v-doctor-card {
+        height: 420px !important;
+    }
+    .v-doctor-overlay {
+        padding: 25px 16px !important;
+    }
+    .v-doctor-meta {
+        transform: translateY(0) !important;
+    }
+    .v-doctor-card:hover .v-doctor-meta,
+    .v-doctor-card.hover-active .v-doctor-meta {
+        transform: translateY(-10px) !important;
+    }
+    .v-doctor-name {
+        font-size: 16px !important;
+        letter-spacing: 0.12em !important;
+        line-height: 1.2 !important;
+    }
+    .v-doctor-role {
+        font-size: 9px !important;
+        letter-spacing: 0.15em !important;
+        line-height: 1.2 !important;
+    }
+    .v-btn-quickview,
+    .v-btn-book {
+        padding: 8px 12px;
+        font-size: 8px;
+        letter-spacing: 0.1em;
+    }
+}
+
+
+
+
 
