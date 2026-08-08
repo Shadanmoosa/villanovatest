@@ -916,5 +916,199 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // About Page View All Doctors Toggle
+    const viewAllDoctorsBtn = document.getElementById('view-all-doctors-btn');
+    if (viewAllDoctorsBtn) {
+        viewAllDoctorsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hiddenCards = document.querySelectorAll('.v-doctor-card.hidden-doctor');
+            hiddenCards.forEach((card, index) => {
+                card.classList.remove('hidden-doctor');
+                card.classList.add('fade-in-doctor');
+                card.style.animationDelay = `${index * 80}ms`;
+            });
+            // Hide the button after expansion
+            viewAllDoctorsBtn.parentElement.style.display = 'none';
+        });
+    }
+
+    // Premium Services Slider Carousel (About Page)
+    const sliderTrack = document.getElementById('v-slider-track');
+    const sliderViewport = document.getElementById('v-slider-viewport');
+    if (sliderTrack && sliderViewport) {
+        const originalCards = Array.from(sliderTrack.querySelectorAll('.v-slider-card'));
+        const dotsContainer = document.getElementById('v-slider-dots');
+
+        // Clone 4 cards at start and end to make it infinite
+        const numClones = 4;
+        
+        // Clone first elements and append to end
+        for (let i = 0; i < numClones; i++) {
+            const clone = originalCards[i].cloneNode(true);
+            clone.classList.add('v-slider-clone');
+            sliderTrack.appendChild(clone);
+        }
+        
+        // Clone last elements and prepend to start
+        for (let i = originalCards.length - numClones; i < originalCards.length; i++) {
+            const clone = originalCards[i].cloneNode(true);
+            clone.classList.add('v-slider-clone');
+            sliderTrack.insertBefore(clone, sliderTrack.firstChild);
+        }
+
+        // Get the full list of cards including clones
+        const allCards = Array.from(sliderTrack.querySelectorAll('.v-slider-card'));
+        
+        // Start index at the first original card (after prepended clones)
+        let currentIndex = numClones; 
+        let isTransitioning = false;
+
+        // Create pagination dots for original cards only
+        originalCards.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.classList.add('v-slider-dot');
+            if (idx === 0) dot.classList.add('active-dot');
+            dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+            dot.addEventListener('click', () => {
+                if (isTransitioning) return;
+                goToOriginalIndex(idx);
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.v-slider-dot');
+
+        function updateSliderPosition(animate = true) {
+            if (animate) {
+                sliderTrack.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)';
+            } else {
+                sliderTrack.style.transition = 'none';
+            }
+
+            const viewportWidth = sliderViewport.offsetWidth;
+            const cardWidth = allCards[0].offsetWidth;
+            const computedGap = parseInt(window.getComputedStyle(sliderTrack).gap) || 35;
+            const centerOffset = (viewportWidth - cardWidth) / 2;
+            const trackOffset = -currentIndex * (cardWidth + computedGap) + centerOffset;
+
+            sliderTrack.style.transform = `translateX(${trackOffset}px)`;
+
+            // Update active states based on current centered card
+            allCards.forEach((card, idx) => {
+                if (idx === currentIndex) {
+                    card.classList.add('active-slide');
+                } else {
+                    card.classList.remove('active-slide');
+                }
+            });
+
+            // Update active dots matching current original index
+            const origIndex = getOriginalIndex(currentIndex);
+            dots.forEach((dot, idx) => {
+                if (idx === origIndex) {
+                    dot.classList.add('active-dot');
+                } else {
+                    dot.classList.remove('active-dot');
+                }
+            });
+        }
+
+        function getOriginalIndex(index) {
+            let originalIndex = (index - numClones) % originalCards.length;
+            if (originalIndex < 0) {
+                originalIndex += originalCards.length;
+            }
+            return originalIndex;
+        }
+
+        function goToSlide(index, animate = true) {
+            if (isTransitioning && animate) return;
+            currentIndex = index;
+            isTransitioning = animate;
+            updateSliderPosition(animate);
+            // Reset autoplay timer on manual transition
+            startAutoplay();
+        }
+
+        function goToOriginalIndex(origIdx) {
+            goToSlide(origIdx + numClones);
+        }
+
+        // Handle seamless wrapping after transition ends
+        sliderTrack.addEventListener('transitionend', () => {
+            isTransitioning = false;
+            
+            // If scrolled past original slides to right clones
+            if (currentIndex >= originalCards.length + numClones) {
+                currentIndex = currentIndex - originalCards.length;
+                updateSliderPosition(false);
+            }
+            // If scrolled past original slides to left clones
+            else if (currentIndex < numClones) {
+                currentIndex = currentIndex + originalCards.length;
+                updateSliderPosition(false);
+            }
+        });
+
+        // Autoplay Logic
+        let autoplayInterval;
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 4000); // Cycles slides every 4 seconds
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+            }
+        }
+
+        // Support clicking directly on side cards to slide to them
+        allCards.forEach((card, idx) => {
+            card.addEventListener('click', (e) => {
+                if (e.target.classList.contains('v-slider-card-btn')) return;
+                goToSlide(idx);
+            });
+        });
+
+        // Initialize positioning and autoplay
+        updateSliderPosition(false);
+        startAutoplay();
+
+        // Pause autoplay on mouse hover
+        sliderViewport.addEventListener('mouseenter', stopAutoplay);
+        sliderViewport.addEventListener('mouseleave', startAutoplay);
+
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            updateSliderPosition(false);
+        });
+
+        // Mobile touch & swipe navigation
+        let startX = 0;
+        let isDragging = false;
+        
+        sliderViewport.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+
+        sliderViewport.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const diffX = e.changedTouches[0].clientX - startX;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    goToSlide(currentIndex - 1);
+                } else {
+                    goToSlide(currentIndex + 1);
+                }
+            }
+            isDragging = false;
+        }, { passive: true });
+    }
 });
 

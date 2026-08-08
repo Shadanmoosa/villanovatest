@@ -5595,6 +5595,532 @@ select.form-control option {
     display: block;
 }
 
+/* About Page Asymmetric Grid Layout */
+.about-grid-section {
+    background-color: var(--white);
+    padding: 120px 0 100px 0;
+}
+
+.about-grid-container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 75px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+    align-items: stretch;
+}
+
+.about-grid-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-grid-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-grid-img-one {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.about-grid-img-one img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+.about-grid-story {
+    margin-bottom: 50px;
+}
+
+.about-grid-story h2 {
+    font-family: var(--font-sans);
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 25px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.about-grid-story p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.about-grid-smalls {
+    display: flex;
+    gap: 20px;
+}
+
+.about-grid-smalls img {
+    width: calc(50% - 10px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+.about-grid-welcome {
+    margin-bottom: 50px;
+}
+
+.about-grid-welcome h2 {
+    font-family: var(--font-sans);
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 25px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.about-grid-welcome p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.about-grid-img-two {
+    flex-grow: 1;
+    display: flex;
+}
+
+.about-grid-img-two img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .about-grid-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .about-grid-img-one {
+        margin-bottom: 30px;
+    }
+    
+    .about-grid-story {
+        margin-bottom: 30px;
+    }
+    
+    .about-grid-welcome {
+        margin-bottom: 30px;
+    }
+    
+    .about-grid-img-two {
+        height: 400px;
+    }
+}
+
+/* About Page Doctors Toggle & Fade In */
+.about-doctors-section .v-doctor-card.hidden-doctor {
+    display: none !important;
+    opacity: 0;
+}
+
+.about-doctors-section .v-doctor-card.fade-in-doctor {
+    display: block !important;
+    animation: fadeInDoctor 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInDoctor {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium Services Slider Section */
+.v-services-slider-section {
+    background-color: var(--white);
+    padding: 100px 0 120px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(29, 44, 71, 0.05);
+}
+
+.v-services-slider-title {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--navy);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 50px;
+}
+
+.v-slider-viewport {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+.v-slider-track {
+    display: flex;
+    gap: 35px;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    padding: 40px 0;
+}
+
+.v-slider-card {
+    flex: 0 0 380px;
+    width: 380px;
+    height: 480px;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #111;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    opacity: 0.55;
+    transform: scale(0.92);
+    filter: grayscale(80%);
+}
+
+.v-slider-card.active-slide {
+    opacity: 1;
+    transform: scale(1.08);
+    box-shadow: 0 25px 50px rgba(29, 44, 71, 0.18);
+    z-index: 10;
+    filter: none;
+}
+
+.v-slider-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+}
+
+.v-slider-card:hover .v-slider-card-img {
+    transform: scale(1.06);
+}
+
+.v-slider-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.65) 100%);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.v-slider-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.v-slider-card-category {
+    color: var(--gold);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.v-slider-card-title {
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.v-slider-card-btn {
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: var(--white);
+    padding: 12px 28px;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.v-slider-card.active-slide .v-slider-card-btn {
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.v-slider-card-btn:hover {
+    background: var(--white) !important;
+    color: var(--navy) !important;
+    border-color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Dots Pagination */
+.v-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.v-slider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(29, 44, 71, 0.15);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.v-slider-dot.active-dot {
+    background-color: var(--navy);
+    transform: scale(1.4);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .v-slider-card {
+        flex: 0 0 320px;
+        width: 320px;
+        height: 420px;
+    }
+    .v-slider-card-title {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 768px) {
+    .v-services-slider-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .v-slider-track {
+        gap: 20px;
+    }
+    .v-slider-card {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 350px;
+    }
+    .v-slider-card-overlay {
+        padding: 22px;
+    }
+    .v-slider-card-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .v-services-slider-title {
+        font-size: 28px;
+    }
+    .v-slider-track {
+        gap: 15px;
+    }
+    .v-slider-card {
+        flex: 0 0 220px;
+        width: 220px;
+        height: 320px;
+    }
+    .v-slider-card-overlay {
+        padding: 18px;
+    }
+    .v-slider-card-title {
+        font-size: 14px;
+    }
+    .v-slider-card-btn {
+        padding: 10px 20px;
+        font-size: 9px;
+    }
+}
+
+/* Force 3-column desktop layout on tablet and mobile for About Page doctors grid */
+/* Force 3-column desktop layout on tablet and mobile for About Page doctors grid */
+@media (max-width: 1024px) {
+    .about-doctors-section {
+        padding: 30px 2% 50px 2% !important; /* Reduced vertical padding */
+    }
+    .about-doctors-section .services-section-title {
+        font-size: 32px !important;
+    }
+    .about-doctors-section .v-doctors-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+        max-width: 100% !important;
+    }
+    .about-doctors-section .v-doctor-card {
+        height: auto !important;
+        min-height: auto !important;
+        aspect-ratio: 4 / 5 !important;
+    }
+    .about-doctors-section .v-doctor-name {
+        font-size: 14px !important;
+        letter-spacing: 0.1em !important;
+    }
+    .about-doctors-section .v-doctor-role {
+        font-size: 8.5px !important;
+        letter-spacing: 0.1em !important;
+    }
+    .about-doctors-section .v-doctor-overlay {
+        padding: 15px 10px !important;
+    }
+    .about-doctors-section .v-doctor-hover-content {
+        display: none !important; /* Hide socials and buttons on tablet viewports */
+    }
+    .about-doctors-section .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-section .v-doctor-card:hover .v-doctor-meta,
+    .about-doctors-section .v-doctor-card.hover-active .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-btn-wrapper {
+        margin-top: 40px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid-section {
+        padding: 40px 0 30px 0 !important; /* Reduced bottom padding of the top grid on tablets */
+    }
+    .about-doctors-section {
+        padding: 25px 1.5% 45px 1.5% !important; /* Reduced vertical padding */
+    }
+    .about-doctors-section .services-section-title {
+        font-size: 26px !important;
+        margin-bottom: 12px !important;
+    }
+    .about-doctors-section .services-section-tag {
+        font-size: 10px !important;
+    }
+    .about-doctors-section .services-section-header {
+        margin-bottom: 25px !important; /* Reduced header spacing */
+    }
+    .about-doctors-section .v-doctors-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important; /* Tighter gap to make cards larger */
+        max-width: 100% !important;
+    }
+    .about-doctors-section .v-doctor-card {
+        height: auto !important;
+        min-height: auto !important;
+        aspect-ratio: 4 / 5 !important;
+    }
+    .about-doctors-section .v-doctor-name {
+        font-size: 11px !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.2 !important;
+    }
+    .about-doctors-section .v-doctor-role {
+        font-size: 7.5px !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.2 !important;
+    }
+    .about-doctors-section .v-doctor-overlay {
+        padding: 12px 8px !important;
+    }
+    .about-doctors-section .v-doctor-hover-content {
+        display: none !important; /* Hide socials and buttons on mobile viewports */
+    }
+    .about-doctors-section .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-section .v-doctor-card:hover .v-doctor-meta,
+    .about-doctors-section .v-doctor-card.hover-active .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-btn-wrapper {
+        margin-top: 30px !important; /* Reduced button spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid-section {
+        padding: 30px 0 15px 0 !important; /* Reduced bottom padding of the top grid on mobile */
+    }
+    .about-doctors-section {
+        padding: 15px 1% 30px 1% !important; /* Reduced vertical padding */
+    }
+    .about-doctors-section .services-section-title {
+        font-size: 20px !important;
+        margin-bottom: 8px !important;
+    }
+    .about-doctors-section .services-section-header {
+        margin-bottom: 18px !important; /* Reduced header spacing */
+    }
+    .about-doctors-section .v-doctors-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important; /* Tiny gap to maximize card widths */
+        max-width: 100% !important;
+    }
+    .about-doctors-section .v-doctor-card {
+        height: auto !important;
+        min-height: auto !important;
+        aspect-ratio: 4 / 5 !important;
+    }
+    .about-doctors-section .v-doctor-name {
+        font-size: 9.5px !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1.2 !important;
+        font-weight: 500 !important;
+        text-shadow: none !important;
+    }
+    .about-doctors-section .v-doctor-role {
+        font-size: 6.5px !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1.2 !important;
+        text-shadow: none !important;
+    }
+    .about-doctors-section .v-doctor-overlay {
+        padding: 8px 4px !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 85%) !important;
+    }
+    .about-doctors-section .v-doctor-hover-content {
+        display: none !important; /* Hide socials and buttons on small screens */
+    }
+    .about-doctors-section .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-section .v-doctor-card:hover .v-doctor-meta,
+    .about-doctors-section .v-doctor-card.hover-active .v-doctor-meta {
+        transform: none !important;
+    }
+    .about-doctors-btn-wrapper {
+        margin-top: 20px !important; /* Reduced button spacing */
+    }
+}
+
+
 
 
 
