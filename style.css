@@ -18,6 +18,8 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --shadow: 0 10px 30px rgba(29, 44, 71, 0.04);
     --shadow-hover: 0 20px 40px rgba(29, 44, 71, 0.08);
+    --carousel-gap: 90px;
+    --carousel-logo-height: 50px;
 }
 
 * {
@@ -1763,7 +1765,7 @@ select.form-control option {
 }
 .carousel-track {
     display: flex;
-    gap: 90px;
+    gap: var(--carousel-gap);
     align-items: center;
     width: max-content;
     animation: scroll-carousel 30s linear infinite;
@@ -1775,7 +1777,7 @@ select.form-control option {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: var(--carousel-logo-height);
     opacity: 0.65;
     transition: opacity var(--transition);
     flex-shrink: 0;
@@ -1795,12 +1797,16 @@ select.form-control option {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 45px));
+        transform: translateX(calc(-50% - (var(--carousel-gap) / 2)));
     }
 }
 
 /* Responsive Overrides for new elements */
 @media (max-width: 768px) {
+    :root {
+        --carousel-gap: 60px;
+        --carousel-logo-height: 45px;
+    }
     .home-hero-exact .home-hero-title {
         font-size: 38px;
     }
@@ -2091,8 +2097,9 @@ select.form-control option {
     .about-title {
         font-size: 30px;
     }
-    .carousel-track {
-        gap: 40px;
+    :root {
+        --carousel-gap: 40px;
+        --carousel-logo-height: 35px;
     }
 }
 
