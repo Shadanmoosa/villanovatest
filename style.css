@@ -1783,9 +1783,11 @@ select.form-control option {
 .carousel-logo:hover {
     opacity: 1;
 }
+.carousel-logo img,
 .carousel-logo svg {
     height: 100%;
     width: auto;
+    object-fit: contain;
 }
 
 @keyframes scroll-carousel {
