@@ -877,5 +877,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Welcome Video Modal Controller
+    const videoModal = document.getElementById('v-video-modal');
+    const welcomeVideo = document.getElementById('v-welcome-video');
+    const videoBadge = document.querySelector('.doctor-video-badge');
+
+    if (videoModal && welcomeVideo && videoBadge) {
+        const videoOverlay = videoModal.querySelector('.v-video-overlay');
+        const videoClose = videoModal.querySelector('.v-video-close');
+
+        const openVideoModal = () => {
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            welcomeVideo.play().catch(err => {
+                console.log("Auto-play blocked or video failed to play:", err);
+            });
+        };
+
+        const closeVideoModal = () => {
+            videoModal.classList.remove('active');
+            document.body.style.overflow = '';
+            welcomeVideo.pause();
+            welcomeVideo.currentTime = 0; // reset video playback
+        };
+
+        videoBadge.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openVideoModal();
+        });
+
+        if (videoClose) videoClose.addEventListener('click', closeVideoModal);
+        if (videoOverlay) videoOverlay.addEventListener('click', closeVideoModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+    }
 });
 
