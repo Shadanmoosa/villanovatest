@@ -709,6 +709,147 @@ select.form-control option {
     transform: translateY(-2px);
 }
 
+.form-buttons {
+    grid-column: span 2;
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form-buttons .form-submit-btn {
+    flex: 1;
+    margin-top: 0;
+    grid-column: auto;
+}
+
+.form-submit-btn.whatsapp-btn {
+    background-color: #25D366;
+    color: var(--white);
+    border: none;
+}
+
+.form-submit-btn.whatsapp-btn:hover {
+    background-color: #20ba5a;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Light theme for appointment section (Contact Page) */
+.contacts-appointment-wrapper {
+    background-color: var(--bg-cream); /* Light cream/grey background */
+    padding: 60px 10%; /* Less padding in Y axis (60px), more padding in X axis (10%) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contacts-appointment-wrapper {
+        padding: 30px 4%; /* Reduce padding on mobile */
+    }
+}
+
+.appointment-section.light {
+    background-color: var(--white);
+    color: var(--text-dark);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(29, 44, 71, 0.06); /* Premium soft shadow */
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: auto; /* Reset min-height to fit form height nicely */
+}
+
+.appointment-section.light .appointment-content {
+    color: var(--text-dark);
+    padding: 60px 6%;
+}
+
+.appointment-section.light .appointment-content h2 {
+    color: var(--navy);
+    text-align: center;
+}
+
+.appointment-section.light .appointment-content p.subtitle {
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.appointment-section.light .form-group label {
+    color: var(--navy);
+}
+
+.appointment-section.light .form-control {
+    background-color: var(--white);
+    border: 1px solid #d2d8e2;
+    color: var(--text-dark);
+}
+
+.appointment-section.light .form-control::placeholder {
+    color: var(--text-light);
+}
+
+.appointment-section.light .form-control:focus {
+    border-color: var(--navy);
+    background-color: var(--white);
+}
+
+.appointment-section.light select.form-control {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d2c47' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    color: var(--text-dark);
+}
+
+.appointment-section.light select.form-control option {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.appointment-section.light .form-submit-btn {
+    background-color: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+    margin: 0;
+}
+
+.appointment-section.light .form-submit-btn:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.appointment-section.light .form-submit-btn.whatsapp-btn {
+    background-color: transparent;
+    color: #25D366;
+    border: 1px solid #25D366;
+}
+
+.appointment-section.light .form-submit-btn.whatsapp-btn:hover {
+    background-color: #25D366;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.appointment-section.light input[type="date"]::-webkit-calendar-picker-indicator,
+.appointment-section.light input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(12%) sepia(29%) saturate(1633%) hue-rotate(180deg) brightness(93%) contrast(90%);
+    cursor: pointer;
+}
+
+
 /* Instagram Section */
 .instagram-section {
     padding: 90px 0 0 0;

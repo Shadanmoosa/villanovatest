@@ -121,7 +121,7 @@
                     <a href="doctors.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
                 </li>
                 <li><a href="blog.html">BLOG</a></li>
-                <li><a href="#booking-form-section">CONTACTS</a></li>
+                <li><a href="contacts.html">CONTACTS</a></li>
                 <li class="mobile-only-nav-item">
                     <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn-mobile">BOOK A VISIT</a>
                 </li>
@@ -634,16 +634,25 @@
         </div>
         <div class="appointment-content">
             <h2>SIGN UP FOR APPOINTMENT</h2>
-            <p class="subtitle">The ultimate dental health experience for your whole family in Portland, Oregon</p>
+            <p class="subtitle">It just takes a few minutes to book a visit online.</p>
             
             <form class="appointment-form" id="appointment-form">
                 <div class="form-group">
                     <label for="treatment-select">TREATMENT</label>
                     <select id="treatment-select" class="form-control">
                         <option value="" disabled selected>Select Treatment</option>
-                        <option value="Facial Radiance">Facial Radiance</option>
-                        <option value="Body Contouring">Body Contouring</option>
-                        <option value="Skin Rejuvenation">Skin Rejuvenation</option>
+                        <option value="Plastic Surgery">Plastic Surgery</option>
+                        <option value="General Surgery">General Surgery</option>
+                        <option value="Dermatology & Aesthetics">Dermatology & Aesthetics</option>
+                        <option value="Beauty Therapy">Beauty Therapy</option>
+                        <option value="Laser Hair Removal">Laser Hair Removal</option>
+                        <option value="Dentistry">Dentistry</option>
+                        <option value="Weight Loss & Dietetics">Weight Loss & Dietetics</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Physiotherapy">Physiotherapy</option>
+                        <option value="Ear Nose & Throat">Ear Nose & Throat</option>
+                        <option value="Andrology & Urology">Andrology & Urology</option>
+                        <option value="Obstetric & Gynecology">Obstetric & Gynecology</option>
                     </select>
                 </div>
                 
@@ -683,7 +692,10 @@
                     <input type="time" id="booking-time" class="form-control">
                 </div>
                 
-                <button type="submit" class="form-submit-btn">MAKE AN APPOINTMENT</button>
+                <div class="form-buttons">
+                    <button type="submit" class="form-submit-btn">MAKE AN APPOINTMENT</button>
+                    <button type="button" id="whatsapp-submit-btn" class="form-submit-btn whatsapp-btn">BOOK VIA WHATSAPP</button>
+                </div>
             </form>
         </div>
     </section>
@@ -805,7 +817,7 @@
                     <li class="active"><a href="doctors.html">Services</a></li>
                     <li><a href="doctors.html">Pages</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#booking-form-section">Contacts</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
                 </ul>
             </nav>
 

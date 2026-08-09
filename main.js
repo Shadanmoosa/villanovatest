@@ -36,35 +36,116 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Appointment Form Booking Handler
+    // Configuration: Replace with your Web3Forms Access Key from https://web3forms.com
+    const WEB3FORMS_ACCESS_KEY = "3ed5c319-1c62-4376-9d3a-9a14041546b5"; 
+
     const appointmentForm = document.getElementById('appointment-form');
     if (appointmentForm) {
         appointmentForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Basic form validation
+            // Basic form validation (only name and phone are required now)
             const name = document.getElementById('client-name').value.trim();
             const phone = document.getElementById('client-phone').value.trim();
             const treatment = document.getElementById('treatment-select').value;
             const doctor = document.getElementById('doctor-select').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
             
-            if (!name || !phone || treatment === '' || doctor === '') {
-                showToast('Please fill out all fields to make an appointment.', 'error');
+            if (!name || !phone) {
+                showToast('Please fill out Name and Phone fields to make an appointment.', 'error');
                 return;
             }
 
-            // Simulate successful booking
             const submitBtn = appointmentForm.querySelector('.form-submit-btn');
             const originalText = submitBtn.innerText;
             submitBtn.innerText = 'PROCESSING...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showToast(`Thank you, ${name}! Your appointment for ${treatment} is requested. We will contact you soon.`, 'success');
-                appointmentForm.reset();
+            // Demo mode fallback if no key is configured
+            if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE" || !WEB3FORMS_ACCESS_KEY) {
+                console.warn("Web3Forms Access Key is not configured. Simulating success...");
+                setTimeout(() => {
+                    showToast(`Demo Mode: Thank you, ${name}! Your appointment request is simulated. (Please configure WEB3FORMS_ACCESS_KEY in main.js to receive real emails)`, 'success');
+                    appointmentForm.reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                }, 1200);
+                return;
+            }
+
+            // Real email submission using Web3Forms
+            const payload = {
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: `New Appointment Request - ${name}`,
+                from_name: "Villanova Cosmetics Clinic",
+                name: name,
+                phone: phone,
+                treatment: treatment || "Not Specified",
+                doctor: doctor || "Not Specified",
+                date: date || "Not Specified",
+                time: time || "Not Specified"
+            };
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(async (response) => {
+                const json = await response.json();
+                if (response.status === 200) {
+                    showToast(`Thank you, ${name}! Your appointment request has been sent. We will contact you soon.`, 'success');
+                    appointmentForm.reset();
+                } else {
+                    console.error(json);
+                    showToast(json.message || 'Something went wrong. Please try again.', 'error');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                showToast('Failed to submit appointment. Please check your internet connection.', 'error');
+            })
+            .finally(() => {
                 submitBtn.innerText = originalText;
                 submitBtn.disabled = false;
-            }, 1200);
+            });
         });
+
+        // WhatsApp submit button click listener
+        const whatsappBtn = document.getElementById('whatsapp-submit-btn');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', () => {
+                const name = document.getElementById('client-name').value.trim();
+                const phone = document.getElementById('client-phone').value.trim();
+                const treatment = document.getElementById('treatment-select').value;
+                const doctor = document.getElementById('doctor-select').value;
+                const date = document.getElementById('booking-date').value;
+                const time = document.getElementById('booking-time').value;
+                
+                if (!name || !phone) {
+                    showToast('Please fill out Name and Phone fields to book via WhatsApp.', 'error');
+                    return;
+                }
+
+                // Construct WhatsApp message text
+                let message = `Hi, I would like to book an appointment at Villanova Cosmetics Clinic.`;
+                message += `\nName: ${name}`;
+                message += `\nPhone: ${phone}`;
+                if (treatment) message += `\nTreatment: ${treatment}`;
+                if (doctor) message += `\nDoctor: ${doctor}`;
+                if (date) message += `\nDate: ${date}`;
+                if (time) message += `\nTime: ${time}`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/971581187071?text=${encodedMessage}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
+        }
     }
 
     // UI Toast Notification helper
