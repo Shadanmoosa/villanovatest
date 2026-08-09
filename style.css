@@ -752,12 +752,6 @@ select.form-control option {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .contacts-appointment-wrapper {
-        padding: 30px 4%; /* Reduce padding on mobile */
-    }
-}
-
 .appointment-section.light {
     background-color: var(--white);
     color: var(--text-dark);
@@ -847,6 +841,70 @@ select.form-control option {
 .appointment-section.light input[type="time"]::-webkit-calendar-picker-indicator {
     filter: invert(12%) sepia(29%) saturate(1633%) hue-rotate(180deg) brightness(93%) contrast(90%);
     cursor: pointer;
+}
+
+/* Tablet & Mobile Responsiveness overrides for Contacts Card */
+@media (max-width: 1024px) {
+    .contacts-appointment-wrapper {
+        padding: 40px 6%;
+    }
+    
+    .appointment-section.light {
+        flex-direction: column-reverse; /* Stacks image at the top of the form for premium mobile visual flow */
+    }
+    
+    .appointment-section.light .appointment-image {
+        height: 400px;
+        width: 100%;
+    }
+    
+    .appointment-section.light .appointment-content {
+        padding: 50px 6%;
+        width: 100%;
+    }
+    
+    .appointment-section.light .appointment-form {
+        grid-template-columns: 1fr 1fr; /* Keep 2 columns on tablet portrait screen width */
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-appointment-wrapper {
+        padding: 20px 4%;
+    }
+    
+    .appointment-section.light .appointment-image {
+        height: 320px;
+    }
+    
+    .appointment-section.light .appointment-content {
+        padding: 40px 5%;
+    }
+    
+    .appointment-section.light .appointment-form {
+        grid-template-columns: 1fr; /* Stacks inputs vertically in 1 column on mobile width */
+        gap: 15px;
+    }
+    
+    .appointment-section.light .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .appointment-section.light .form-buttons .form-submit-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-appointment-wrapper {
+        padding: 10px 0; /* Full screen card layout on small smartphones to maximize form area */
+    }
+    
+    .appointment-section.light {
+        border-radius: 0;
+        box-shadow: none;
+    }
 }
 
 
