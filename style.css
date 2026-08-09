@@ -654,6 +654,7 @@ body {
 }
 
 .form-control {
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 14px 18px;
@@ -865,12 +866,19 @@ select.form-control option {
     
     .appointment-section.light .appointment-form {
         grid-template-columns: 1fr 1fr; /* Keep 2 columns on tablet portrait screen width */
+        gap: 20px 15px;
     }
 }
 
 @media (max-width: 768px) {
     .contacts-appointment-wrapper {
-        padding: 20px 4%;
+        background-color: var(--white); /* White background to look seamless as in mockup */
+        padding: 20px 4% 80px 4%; /* Added bottom padding to prevent buttons from getting cut off */
+    }
+    
+    .appointment-section.light {
+        box-shadow: none;
+        border-radius: 0;
     }
     
     .appointment-section.light .appointment-image {
@@ -878,12 +886,17 @@ select.form-control option {
     }
     
     .appointment-section.light .appointment-content {
-        padding: 40px 5%;
+        padding: 30px 4%;
+    }
+    
+    .appointment-section.light .form-control {
+        padding: 10px 12px; /* Smaller padding inside inputs on mobile/tablet */
+        font-size: 12px; /* Slightly smaller font size */
     }
     
     .appointment-section.light .appointment-form {
-        grid-template-columns: 1fr; /* Stacks inputs vertically in 1 column on mobile width */
-        gap: 15px;
+        grid-template-columns: 1fr 1fr; /* Keep 2 columns side-by-side on tablet/large mobile view */
+        gap: 15px 12px;
     }
     
     .appointment-section.light .form-buttons {
@@ -896,14 +909,16 @@ select.form-control option {
     }
 }
 
+@media (max-width: 576px) {
+    .appointment-section.light .appointment-form {
+        grid-template-columns: 1fr; /* Stack one-by-one per row on small screens where space is tight */
+        gap: 12px;
+    }
+}
+
 @media (max-width: 480px) {
     .contacts-appointment-wrapper {
-        padding: 10px 0; /* Full screen card layout on small smartphones to maximize form area */
-    }
-    
-    .appointment-section.light {
-        border-radius: 0;
-        box-shadow: none;
+        padding: 10px 0 80px 0; /* Full screen card layout on small smartphones to maximize form area */
     }
 }
 
