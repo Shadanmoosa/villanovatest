@@ -35,6 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile Navigation Dropdown Toggle
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        if (link) {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault(); // Prevent navigating immediately
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
+
+        // Close mobile drawer when clicking any child link of the dropdown
+        const subLinks = dropdown.querySelectorAll('.dropdown-menu a');
+        subLinks.forEach(subLink => {
+            subLink.addEventListener('click', () => {
+                if (mainNav && menuToggle) {
+                    mainNav.classList.remove('mobile-active');
+                    document.body.classList.remove('mobile-menu-open');
+                    menuToggle.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+                }
+            });
+        });
+    });
+
     // Appointment Form Booking Handler
     // Configuration: Replace with your Web3Forms Access Key from https://web3forms.com
     const WEB3FORMS_ACCESS_KEY = "3ed5c319-1c62-4376-9d3a-9a14041546b5"; 

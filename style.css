@@ -274,6 +274,74 @@ body {
     color: var(--gold);
 }
 
+/* Dropdown Menu Styles (Desktop) */
+@media (min-width: 769px) {
+    .nav-links li.dropdown {
+        position: relative;
+    }
+    
+    .nav-links li.dropdown .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(15px);
+        background-color: var(--white);
+        min-width: 260px;
+        box-shadow: 0 15px 40px rgba(29, 44, 71, 0.08);
+        border: 1px solid rgba(29, 44, 71, 0.04);
+        border-radius: 4px;
+        padding: 15px 0;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+    }
+
+    /* Invisible bridge to prevent dropdown closing when moving mouse */
+    .nav-links li.dropdown::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 100%;
+        height: 15px;
+    }
+    
+    .nav-links li.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    .dropdown-menu li {
+        width: 100%;
+    }
+    
+    .dropdown-menu li a {
+        display: block;
+        padding: 10px 24px;
+        color: var(--navy);
+        font-size: 11px;
+        font-family: var(--font-sans);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: var(--transition);
+        position: relative;
+    }
+    
+    .dropdown-menu li a::after {
+        display: none; /* Disable underline effect for dropdown links */
+    }
+    
+    .dropdown-menu li a:hover {
+        color: var(--gold) !important;
+        background-color: var(--bg-cream);
+        padding-left: 28px; /* Subtle slide-right effect on hover */
+    }
+}
+
 /* Menu Toggle for Mobile */
 .menu-toggle {
     display: none;
@@ -1790,6 +1858,14 @@ select.form-control option {
     color: var(--white) !important;
 }
 
+.header-transparent .nav-links .dropdown-menu a {
+    color: var(--navy) !important;
+}
+
+.header-transparent .nav-links .dropdown-menu a:hover {
+    color: var(--gold) !important;
+}
+
 .header-transparent .nav-links a:hover {
     color: var(--gold-light) !important;
 }
@@ -2299,6 +2375,37 @@ select.form-control option {
 
     .main-nav.mobile-active .nav-links a:hover {
         color: var(--gold) !important;
+    }
+
+    .main-nav.mobile-active .nav-links li.dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .main-nav.mobile-active .nav-links li.dropdown .dropdown-menu {
+        display: none;
+        width: 80%;
+        margin-top: 10px;
+        padding: 10px 0;
+        background-color: var(--bg-cream);
+        border-radius: 4px;
+        list-style: none;
+        text-align: center;
+        max-height: 250px;
+        overflow-y: auto; /* Scroll support inside mobile menu services */
+    }
+
+    .main-nav.mobile-active .nav-links li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .main-nav.mobile-active .nav-links li.dropdown .dropdown-menu li a {
+        font-size: 13px !important;
+        padding: 8px 15px !important;
+        color: var(--navy) !important;
+        font-weight: 500;
     }
 
     .mobile-only-nav-item {
