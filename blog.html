@@ -56,7 +56,7 @@
     </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- PRELOADER -->
     <div id="preloader">
         <div class="preloader-content">
@@ -65,59 +65,11 @@
         </div>
     </div>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <div class="top-bar-phones">
-                <a href="tel:+97144580366" class="top-bar-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    <span>04 458 0366</span>
-                </a>
-                <a href="tel:+971509398270" class="top-bar-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    <span>050 939 8270</span>
-                </a>
-            </div>
-            <a href="https://share.google/lkpmBXyH2SyP2eWAj" target="_blank" class="top-bar-item">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>206 Block B, Hudaiba Awards Building, Al Mina Rd, Dubai, UAE</span>
-            </a>
-        </div>
-        <!-- Logo for desktop view -->
-        <a href="index.html" class="logo-container desktop-logo">
-            <img src="images/villanovalogo11.png" alt="Villanova Cosmetics & One Day Surgery Center Logo" class="logo-img">
-        </a>
-
-        <div class="top-bar-right">
-            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn">BOOK A
-                VISIT</a>
-        </div>
-    </div>
-
-    <!-- MAIN HEADER -->
-    <header class="main-header">
-        <!-- Logo for mobile view -->
-        <a href="index.html" class="logo-container mobile-logo">
-            <img src="images/villanovalogo11.png" alt="Villanova Cosmetics & One Day Surgery Center Logo" class="logo-img">
-        </a>
-
-        <!-- Mobile Header Actions (visible on mobile only) -->
-        <div class="mobile-header-actions">
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+    <!-- INNER HEADER -->
+    <header class="inner-header">
+        <div class="inner-header-container">
+            <!-- Mobile Menu Toggle Button (Visible on mobile/tablet only) -->
+            <button class="menu-toggle mobile-only-toggle" id="menu-toggle" aria-label="Toggle Menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -125,26 +77,80 @@
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
+
+            <!-- Left: Desktop Navigation Links -->
+            <nav class="inner-nav" id="inner-nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#services-section">SERVICES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plasticsurgery.html">Plastic Surgery</a></li>
+                            <li><a href="about.html#services-section">General Surgery</a></li>
+                            <li><a href="about.html#services-section">Dermatology & Aesthetics</a></li>
+                            <li><a href="about.html#services-section">Beauty Therapy</a></li>
+                            <li><a href="about.html#services-section">Laser Hair Removal</a></li>
+                            <li><a href="about.html#services-section">Dentistry</a></li>
+                            <li><a href="about.html#services-section">Weight Loss & Dietetics</a></li>
+                            <li><a href="about.html#services-section">Internal Medicine</a></li>
+                            <li><a href="about.html#services-section">Physiotherapy</a></li>
+                            <li><a href="about.html#services-section">Ear Nose & Throat</a></li>
+                            <li><a href="about.html#services-section">Andrology & Urology</a></li>
+                            <li><a href="about.html#services-section">Obstetric & Gynecology</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="about.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg></a>
+                    </li>
+                    <li class="active"><a href="blog.html">BLOG</a></li>
+                    <li><a href="contacts.html">CONTACTS</a></li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo -->
+            <a href="index.html" class="inner-logo-container">
+                <img src="images/villanovalogo11.png" alt="Villanova Cosmetics Logo" class="inner-logo-img">
+            </a>
+
+            <!-- Right: Actions -->
+            <div class="inner-header-right">
+                <a href="tel:+97144580366" class="inner-phone">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>04 458 0366</span>
+                </a>
+                <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="inner-book-btn">BOOK A VISIT</a>
+            </div>
+
+            <!-- Mobile WhatsApp Button -->
+            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="mobile-only-whatsapp" aria-label="Chat on WhatsApp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+            </a>
         </div>
 
+        <!-- Mobile Drawer Navigation Menu -->
         <nav class="main-nav" id="main-nav">
             <ul class="nav-links">
                 <li>
-                    <a href="index.html">HOME <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg></a>
+                    <a href="index.html">HOME <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
                 </li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li class="dropdown">
-                    <a href="index.html#services-section">SERVICES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg></a>
+                    <a href="index.html#services-section">SERVICES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
                     <ul class="dropdown-menu">
-                        <li><a href="about.html#services-section">Plastic Surgery</a></li>
+                        <li><a href="plasticsurgery.html">Plastic Surgery</a></li>
                         <li><a href="about.html#services-section">General Surgery</a></li>
                         <li><a href="about.html#services-section">Dermatology & Aesthetics</a></li>
                         <li><a href="about.html#services-section">Beauty Therapy</a></li>
@@ -159,17 +165,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="about.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg></a>
+                    <a href="about.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
                 </li>
                 <li class="active"><a href="blog.html">BLOG</a></li>
                 <li><a href="contacts.html">CONTACTS</a></li>
                 <li class="mobile-only-nav-item">
-                    <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank"
-                        class="book-visit-btn-mobile">BOOK A VISIT</a>
+                    <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="book-visit-btn-mobile">BOOK A VISIT</a>
                 </li>
             </ul>
         </nav>

@@ -52,11 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const subLinks = dropdown.querySelectorAll('.dropdown-menu a');
         subLinks.forEach(subLink => {
             subLink.addEventListener('click', () => {
-                if (mainNav && menuToggle) {
-                    mainNav.classList.remove('mobile-active');
-                    document.body.classList.remove('mobile-menu-open');
-                    menuToggle.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
-                }
+                setTimeout(() => {
+                    if (mainNav && menuToggle) {
+                        mainNav.classList.remove('mobile-active');
+                        document.body.classList.remove('mobile-menu-open');
+                        menuToggle.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+                    }
+                }, 150); // Delay menu closing slightly to avoid page navigation cancel issues in mobile browsers
             });
         });
     });
@@ -536,6 +538,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Sticky main header scrolled styling scroll effect on mobile & desktop
+    const mainHeader = document.querySelector('.main-header.header-transparent');
+    if (mainHeader) {
+        const checkScroll = () => {
+            if (window.scrollY > 40) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', checkScroll, { passive: true });
+        checkScroll(); // check initial state
+    }
+
     // Procedures Carousel (Services) Control
     const procViewport = document.getElementById('procedures-viewport');
     const procTrack = document.getElementById('procedures-track');
@@ -750,6 +766,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 200);
             });
         }
+
+        // Auto-switch to grid view if URL contains #services-section
+        const handleServicesHash = () => {
+            if (window.location.hash === '#services-section') {
+                if (!isGridView && viewAllBtn) {
+                    viewAllBtn.click();
+                }
+            }
+        };
+
+        // Listen for load and hashchange
+        window.addEventListener('load', () => {
+            setTimeout(handleServicesHash, 150); // Small delay to guarantee preloader & carousel initialization
+        });
+        window.addEventListener('hashchange', handleServicesHash);
+
+        // Click listener on header SERVICES link to force grid view even if hash doesn't change
+        const servicesNavLinks = document.querySelectorAll('a[href*="#services-section"]');
+        servicesNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!isGridView && viewAllBtn) {
+                    viewAllBtn.click();
+                }
+            });
+        });
 
         startAutoplay();
     }
