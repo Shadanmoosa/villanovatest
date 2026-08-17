@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatology & Aesthetics Dubai | Face Cosmetology & Injections</title>
+    <meta name="description"
+        content="Royal Villanova Cosmetics & One Day Surgery Center Dubai. Board-certified specialists in clinical dermatology, advanced face cosmetology, anti-aging injections, and laser skin treatments. Book your consultation today.">
+    <meta name="keywords"
+        content="dermatology dubai, skin clinic dubai, botox dubai, lip fillers dubai, face cosmetology, skin rejuvenation dubai, acne treatment, clinical dermatology dubai, aesthetic clinic dubai">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://villanovamedical.ae/dermatology.html">
+    <meta property="og:title" content="Dermatology & Aesthetics Dubai | Face Cosmetology & Injections">
+    <meta property="og:description"
+        content="Board-certified clinical excellence, modern luxury facilities, and personalized aesthetic skin care at Royal Villanova Cosmetics & One Day Surgery Center Dubai.">
+    <meta property="og:image" content="images/dhermath.jpg">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="images/logoonly.png">
+    <link rel="apple-touch-icon" href="images/logoonly.png">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styling Override for Premium Detail Page -->
+    <style>
+        /* Redesigned Split Hero Layout */
+        .split-hero-section {
+            display: flex;
+            min-height: 600px;
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .split-hero-img {
+            flex: 1;
+            background-image: url('images/dhermath.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .split-hero-content {
+            flex: 1;
+            background-color: var(--bg-cream);
+            background-image: linear-gradient(rgba(247, 245, 240, 0.95), rgba(247, 245, 240, 0.95)), url('images/marble-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8% 10%;
+            box-sizing: border-box;
+        }
+
+        .split-hero-badge {
+            background-color: var(--navy);
+            color: var(--white);
+            font-family: var(--font-sans);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            padding: 6px 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 25px;
+            border-radius: 2px;
+        }
+
+        .split-hero-title {
+            font-family: var(--font-sans);
+            font-size: 44px;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            color: var(--navy);
+            margin: 0 0 25px 0;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .split-hero-desc {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            font-style: italic;
+            margin: 0;
+            max-width: 520px;
+        }
+
+        /* Redesigned Intro Section */
+        .aesthetic-intro-section {
+            padding: 100px 6%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .aesthetic-intro-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .aesthetic-intro-title {
+            font-family: var(--font-sans);
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            color: var(--navy);
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        .aesthetic-intro-text {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+        }
+
+        .aesthetic-intro-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 991px) {
+            .split-hero-section {
+                flex-direction: column;
+            }
+
+            .split-hero-img {
+                min-height: 350px;
+                order: 1;
+            }
+
+            .split-hero-content {
+                order: 2;
+                padding: 60px 8%;
+                align-items: center;
+                text-align: center;
+            }
+
+            .split-hero-title {
+                font-size: 32px;
+            }
+
+            .split-hero-desc {
+                font-size: 15px;
+            }
+
+            .aesthetic-intro-section {
+                padding: 60px 6%;
+            }
+
+            .aesthetic-intro-title {
+                font-size: 24px;
+            }
+
+            .aesthetic-intro-text {
+                font-size: 15px;
+            }
+
+            .dermatology-row {
+                flex-direction: column;
+                gap: 25px !important;
+            }
+
+            .dermatology-img-col {
+                min-height: 300px !important;
+                flex: 1 1 auto !important;
+            }
+
+            .dermatology-content-col {
+                flex: 1 1 auto !important;
+            }
+
+            .dermatology-content-col>div {
+                padding: 30px 20px !important;
+            }
+        }
+
+        /* Alternating Treatment Sections Styling */
+        .dermatology-procedures-section {
+            padding: 100px 6%;
+            background-color: var(--white);
+        }
+
+        .treatment-row {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+            flex-wrap: wrap;
+        }
+
+        .treatment-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .treatment-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .treatment-img-col {
+            flex: 1 1 450px;
+            height: 480px;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(29, 44, 71, 0.05);
+        }
+
+        .treatment-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .treatment-row:hover .treatment-img-col img {
+            transform: scale(1.03);
+        }
+
+        .treatment-content-col {
+            flex: 1 1 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .treatment-badge {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .treatment-title {
+            font-family: var(--font-sans);
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--navy);
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+        }
+
+        .treatment-desc {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            line-height: 1.85;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .treatment-btn {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            color: var(--white);
+            background-color: var(--navy);
+            border: 1px solid var(--navy);
+            padding: 14px 32px;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            border-radius: 2px;
+        }
+
+        .treatment-btn:hover {
+            background-color: transparent;
+            color: var(--navy);
+        }
+
+        .treatment-brands {
+            margin-top: 35px;
+            border-top: 1px solid rgba(29, 44, 71, 0.08);
+            padding-top: 25px;
+        }
+
+        .treatment-brands-title {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--navy);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .brands-logo-grid {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo-img {
+            height: 28px;
+            object-fit: contain;
+            filter: grayscale(1) opacity(0.65);
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo-img:hover {
+            filter: none;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile adjustments for treatment rows */
+        @media (max-width: 991px) {
+            .treatment-row {
+                flex-direction: column !important;
+                gap: 35px;
+                margin-bottom: 70px;
+            }
+
+            .treatment-img-col {
+                height: 320px;
+                width: 100%;
+                flex: 1 1 auto;
+            }
+
+            .treatment-content-col {
+                flex: 1 1 auto;
+                text-align: center;
+                align-items: center;
+            }
+
+            .treatment-btn {
+                align-self: center;
+            }
+
+            .brands-logo-grid {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="inner-page">
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- INNER HEADER -->
+    <header class="inner-header">
+        <div class="inner-header-container">
+            <!-- Mobile Menu Toggle Button (Visible on mobile/tablet only) -->
+            <button class="menu-toggle mobile-only-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Left: Desktop Navigation Links -->
+            <nav class="inner-nav" id="inner-nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li class="dropdown active">
+                        <a href="index.html#services-section">SERVICES <svg class="chevron-down" width="8" height="8"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 4px; vertical-align: middle;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plasticsurgery.html">Plastic Surgery</a></li>
+                            <li><a href="generalsurgery.html">General Surgery</a></li>
+                            <li><a href="dermatology.html">Dermatology & Aesthetics</a></li>
+                            <li><a href="about.html#services-section">Beauty Therapy</a></li>
+                            <li><a href="about.html#services-section">Laser Hair Removal</a></li>
+                            <li><a href="about.html#services-section">Dentistry</a></li>
+                            <li><a href="about.html#services-section">Weight Loss & Dietetics</a></li>
+                            <li><a href="about.html#services-section">Internal Medicine</a></li>
+                            <li><a href="about.html#services-section">Physiotherapy</a></li>
+                            <li><a href="about.html#services-section">Ear Nose & Throat</a></li>
+                            <li><a href="about.html#services-section">Andrology & Urology</a></li>
+                            <li><a href="about.html#services-section">Obstetric & Gynecology</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="about.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg></a>
+                    </li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contacts.html">CONTACTS</a></li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo -->
+            <a href="index.html" class="inner-logo-container">
+                <img src="images/villanovalogo11.png" alt="Villanova Cosmetics Logo" class="inner-logo-img">
+            </a>
+
+            <!-- Right: Actions -->
+            <div class="inner-header-right">
+                <a href="tel:+97144580366" class="inner-phone">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span>04 458 0366</span>
+                </a>
+                <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="inner-book-btn">BOOK A
+                    VISIT</a>
+            </div>
+
+            <!-- Mobile WhatsApp Button -->
+            <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank" class="mobile-only-whatsapp"
+                aria-label="Chat on WhatsApp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Drawer Navigation Menu -->
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">HOME <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown active">
+                    <a href="index.html#services-section">SERVICES <svg class="chevron-down" width="8" height="8"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left: 4px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plasticsurgery.html">Plastic Surgery</a></li>
+                        <li><a href="generalsurgery.html">General Surgery</a></li>
+                        <li><a href="dermatology.html">Dermatology & Aesthetics</a></li>
+                        <li><a href="about.html#services-section">Beauty Therapy</a></li>
+                        <li><a href="about.html#services-section">Laser Hair Removal</a></li>
+                        <li><a href="about.html#services-section">Dentistry</a></li>
+                        <li><a href="about.html#services-section">Weight Loss & Dietetics</a></li>
+                        <li><a href="about.html#services-section">Internal Medicine</a></li>
+                        <li><a href="about.html#services-section">Physiotherapy</a></li>
+                        <li><a href="about.html#services-section">Ear Nose & Throat</a></li>
+                        <li><a href="about.html#services-section">Andrology & Urology</a></li>
+                        <li><a href="about.html#services-section">Obstetric & Gynecology</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">PAGES <svg class="chevron-down" width="8" height="8" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                </li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contacts.html">CONTACTS</a></li>
+                <li class="mobile-only-nav-item">
+                    <a href="https://wa.me/971509398270?text=Hi%20villannova" target="_blank"
+                        class="book-visit-btn-mobile">BOOK A VISIT</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SPLIT HERO BANNER (Redesigned Split Screen Layout) -->
+    <section class="split-hero-section">
+        <div class="split-hero-img"></div>
+        <div class="split-hero-content">
+            <span class="split-hero-badge">CLINICAL EXCELLENCE</span>
+            <h1 class="split-hero-title">DERMATOLOGY & AESTHETICS</h1>
+            <p class="split-hero-desc">Reveal your natural radiance and maintain healthy, glowing skin with our
+                state-of-the-art dermatological care and advanced medical aesthetics. Under the leadership of
+                board-certified clinical specialists, we offer customized solutions for skin health, anti-aging
+                therapies, and advanced laser treatments in Dubai.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTRO STATEMENT -->
+    <section class="aesthetic-intro-section">
+        <div class="aesthetic-intro-container">
+            <h2 class="aesthetic-intro-title">Clinical Skin Care Excellence</h2>
+            <p class="aesthetic-intro-text">At Royal Villanova Cosmetics & One Day Surgery Center Dubai, we blend
+                advanced medical science with premium cosmetic aesthetics to deliver outstanding dermatological care.
+                Under the guidance of our clinical specialists, we treat various skin conditions and provide anti-aging
+                therapies designed to restore, refine, and rejuvenate your skin’s health and vitality.</p>
+            <p class="aesthetic-intro-text">Whether you are looking to refresh your complexion with targeted facial
+                cosmetology, seeking advanced depigmentation, or looking for premium non-surgical injections to contour
+                and lift, our center is equipped with the latest technology. We offer safe, personalized treatments in a
+                private, luxurious, and caring environment.</p>
+        </div>
+    </section>
+
+    <!-- DERMATOLOGY SERVICES SECTION (Alternating Premium Treatment Rows) -->
+    <section class="dermatology-procedures-section">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column;">
+
+            <!-- Treatment 1: Botox -->
+            <div id="botox-treatment-dubai" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/botox.jpg" alt="Botox Injection Dubai - Non-Surgical Wrinkle Reduction and Anti-Aging Treatment at Royal Villanova Center">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Anti-Aging & Wrinkle Care</span>
+                    <h2 class="treatment-title">Botox Injection</h2>
+                    <p class="treatment-desc">A premium FDA-approved injectable treatment that relaxes targeted facial muscles, effectively smoothing fine lines, crow's feet, and forehead wrinkles to restore a refreshed, youthful, and relaxed appearance.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Botox%20Injection." target="_blank" title="Inquire about Botox Injection on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                    <div class="treatment-brands">
+                        <h4 class="treatment-brands-title">Featured Brands</h4>
+                        <div class="brands-logo-grid">
+                            <img src="images/companylogo/botoxallergan.png" alt="Botox Allergan" class="brand-logo-img">
+                            <img src="images/companylogo/dysport.png" alt="Dysport" class="brand-logo-img">
+                            <img src="images/companylogo/nabota.png" alt="Nabota" class="brand-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment 2: Dermal Fillers -->
+            <div id="dermal-fillers-dubai" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/fillers.jpg" alt="Dermal Fillers Dubai - Hyaluronic Acid Lip Filler, Cheek Augmentation and Face Contouring">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Volume & Contouring</span>
+                    <h2 class="treatment-title">Dermal Fillers</h2>
+                    <p class="treatment-desc">Premium hyaluronic acid injectables designed to replenish lost volume, sculpt facial contours, and enhance natural features. Ideal for lip augmentation, cheek definition, jawline contouring, and correcting under-eye hollows.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Dermal%20Fillers." target="_blank" title="Inquire about Dermal Fillers on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                    <div class="treatment-brands">
+                        <h4 class="treatment-brands-title">Featured Brands</h4>
+                        <div class="brands-logo-grid">
+                            <img src="images/companylogo/juvederm.png" alt="Juvederm" class="brand-logo-img">
+                            <img src="images/companylogo/restylane.png" alt="Restylane" class="brand-logo-img">
+                            <img src="images/companylogo/sculptra.png" alt="Sculptra" class="brand-logo-img">
+                            <img src="images/companylogo/profhilo.png" alt="Profhilo" class="brand-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment 3: Body Filler -->
+            <div id="body-filler-contouring" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/bodyfiller.jpg" alt="Body Filler Dubai - Non-Surgical Body Sculpting, Buttocks Volume and Hand Rejuvenation">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Body Sculpting & Volume</span>
+                    <h2 class="treatment-title">Body Filler</h2>
+                    <p class="treatment-desc">Specialized high-viscosity dermal fillers formulated to restore volume, correct asymmetries, and sculpt larger body areas, including the hands, chest, and buttocks, offering a non-surgical alternative to body shaping.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Body%20Filler." target="_blank" title="Inquire about Body Filler on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                </div>
+            </div>
+
+            <!-- Treatment 4: Thread Lift -->
+            <div id="thread-lift-facelift" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/thread lift.jpg" alt="PDO Thread Lift Dubai - Non-Surgical Facelift and Skin Tightening for Jawline and Neck">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Non-Surgical Face Lift</span>
+                    <h2 class="treatment-title">Thread Lift</h2>
+                    <p class="treatment-desc">A minimally invasive lifting procedure utilizing biocompatible and dissolvable PDO (Polydioxanone) threads. This advanced therapy physically lifts sagging tissue in the mid-face, jawline, and neck while stimulating natural collagen production.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Thread%20Lift." target="_blank" title="Inquire about Thread Lift on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                </div>
+            </div>
+
+            <!-- Treatment 5: Salmon DNA Treatment -->
+            <div id="salmon-dna-rejuvenation" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/salmon dna.jpg" alt="Salmon DNA Treatment Dubai - Polynucleotide Skin booster for Cellular Hydration and Repair">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Skin Healing & Hydration</span>
+                    <h2 class="treatment-title">Salmon DNA Treatment</h2>
+                    <p class="treatment-desc">A highly restorative injection treatment formulated with purified polynucleotides (PN) derived from salmon DNA. It stimulates cellular regeneration, hydrates deep skin layers, improves skin elasticity, and treats fine wrinkles.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Salmon%20DNA%20Treatment." target="_blank" title="Inquire about Salmon DNA Treatment on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                </div>
+            </div>
+
+            <!-- Treatment 6: Morpheus8 -->
+            <div id="morpheus8-rf-microneedling" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/morphus8.jpg" alt="Morpheus8 RF Microneedling Dubai - Deep Fractional Skin Tightening and Acne Scar Removal">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Deep Collagen Remodeling</span>
+                    <h2 class="treatment-title">Morpheus8</h2>
+                    <p class="treatment-desc">A state-of-the-art fractional treatment that combines microneedling and radiofrequency (RF) energy. It penetrates deep into subdermal layers to remodel fat, tighten collagen fibers, reduce acne scarring, and refine skin texture.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Morpheus8." target="_blank" title="Inquire about Morpheus8 on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                    <div class="treatment-brands">
+                        <h4 class="treatment-brands-title">Featured Device</h4>
+                        <div class="brands-logo-grid">
+                            <img src="images/companylogo/morphus.png" alt="Morpheus8" class="brand-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment 7: Exosome Therapy -->
+            <div id="exosome-therapy-regeneration" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/exesome.jpg" alt="Exosome Therapy Dubai - Regenerative Skin Rejuvenation and Scalp Hair Growth Treatments">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Regenerative Aesthetics</span>
+                    <h2 class="treatment-title">Exosome Therapy</h2>
+                    <p class="treatment-desc">A state-of-the-art regenerative biotechnology that utilizes stem cell-derived signaling vesicles (exosomes) loaded with high concentrations of growth factors, lipids, and proteins to stimulate cellular repair and communication.</p>
+                    <div style="margin-bottom: 25px; display: grid; grid-template-columns: 1fr; gap: 12px; font-family: var(--font-sans); font-size: 14px; color: var(--text-gray); line-height: 1.6;">
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Face:</strong> Rejuvenates aging skin, boosts collagen and elastin production, minimizes pore size, targets acne scarring, eczema, and rosacea, and reduces the appearance of deep wrinkles.</span>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Hair:</strong> Nourishes and revitalizes the scalp, triggers dormant hair follicles into the active growth phase, reduces hair loss, and significantly improves hair thickness and density.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Exosome%20Therapy." target="_blank" title="Inquire about Exosome Therapy on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                    <div class="treatment-brands">
+                        <h4 class="treatment-brands-title">Featured Brands</h4>
+                        <div class="brands-logo-grid">
+                            <img src="images/companylogo/exesome.png" alt="Exosomes" class="brand-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment 8: PRP Therapy -->
+            <div id="prp-therapy-vampire-facial" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/prp.jpg" alt="PRP Therapy Dubai - Platelet-Rich Plasma Hair Restoration and Vampire Facial Skin Renewal">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Natural Rejuvenation</span>
+                    <h2 class="treatment-title">PRP Therapy</h2>
+                    <p class="treatment-desc">A natural, autologous treatment that utilizes the concentrated healing platelets and growth factors from your own blood to stimulate cellular repair, accelerate tissue regeneration, and boost collagen production.</p>
+                    <div style="margin-bottom: 25px; display: grid; grid-template-columns: 1fr; gap: 12px; font-family: var(--font-sans); font-size: 14px; color: var(--text-gray); line-height: 1.6;">
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Face:</strong> Often known as the 'Vampire Facial', it minimizes fine lines, improves skin elasticity and texture, reduces acne scars and hyperpigmentation, and restores a natural, healthy glow.</span>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Hair:</strong> Injected into the scalp to nourish hair follicles, increase blood supply to the roots, stimulate active hair growth, and effectively combat thinning and early-stage hair loss.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20PRP%20Therapy." target="_blank" title="Inquire about PRP Therapy on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                </div>
+            </div>
+
+            <!-- Treatment 9: Regenera Activa -->
+            <div id="regenera-activa-hair-loss" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/Regenera.jpg" alt="Regenera Activa Dubai - Autologous Micrograft Cellular Treatment for Hair Thinning and Alopecia">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Cellular Hair & Skin Therapy</span>
+                    <h2 class="treatment-title">Regenera Activa</h2>
+                    <p class="treatment-desc">A cutting-edge autologous micrograft system that utilizes cell micro-suspensions harvested from the patient's own tissue. Highly effective for treating hair thinning and alopecia on the scalp, as well as enhancing overall skin density and vitality.</p>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Regenera%20Activa." target="_blank" title="Inquire about Regenera Activa on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                    <div class="treatment-brands">
+                        <h4 class="treatment-brands-title">Featured Device</h4>
+                        <div class="brands-logo-grid">
+                            <img src="images/companylogo/reginera.png" alt="Regenera Activa" class="brand-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment 10: Lemon Bottle Fat Dissolver -->
+            <div id="lemon-bottle-fat-dissolving" class="reveal-element treatment-row">
+                <div class="treatment-img-col">
+                    <img src="images/dermatology/lemonbottle.jpg" alt="Lemon Bottle Fat Dissolving Dubai - Targeted Lipolysis Injection for Face Double Chin and Body Fat Removal">
+                </div>
+                <div class="treatment-content-col">
+                    <span class="treatment-badge">Advanced Lipolysis</span>
+                    <h2 class="treatment-title">Lemon Bottle</h2>
+                    <p class="treatment-desc">A premium, high-concentration lipolysis solution featuring natural ingredients like riboflavin (Vitamin B2), lecithin, and bromelain. It accelerates the breakdown of fat cells in targeted areas without the swelling typically caused by deoxycholic acid treatments.</p>
+                    <div style="margin-bottom: 25px; display: grid; grid-template-columns: 1fr; gap: 12px; font-family: var(--font-sans); font-size: 14px; color: var(--text-gray); line-height: 1.6;">
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Face:</strong> Effectively targets stubborn double chin fat, refines the jawline, reduces jowl sagging, and contours the cheeks for a slimmer, more defined facial profile.</span>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                            <span style="color: var(--gold); font-weight: bold; font-size: 16px; line-height: 1;">✦</span>
+                            <span><strong>For Body:</strong> Targets localized pockets of stubborn fat in the upper arms, abdomen, love handles (flanks), back, and thighs to support body contouring goals.</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20Lemon%20Bottle%20Fat%20Dissolving." target="_blank" title="Inquire about Lemon Bottle Fat Dissolving on WhatsApp" class="treatment-btn">BOOK AN INQUIRY</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#services-section">Services</a></li>
+                    <li><a href="about.html">Pages</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-content">
+                <!-- Address Column -->
+                <div class="footer-column left">
+                    <h4>Address</h4>
+                    <p><a href="https://maps.app.goo.gl/m46aWwb4TGhrdsnt7" target="_blank"
+                            class="footer-address-link">Awards Building - Block B, Al Diyafah Street, Al Hudaiba, Al
+                            Mina, Dubai</a></p>
+                    <p class="sub-text">Sat-Thu: 11am - 8pm<br>Friday: Closed</p>
+                </div>
+
+                <!-- Center Logo Column -->
+                <div class="footer-column center">
+                    <a href="index.html" class="logo-container" style="margin-bottom: 0;">
+                        <img src="images/villanovalogo11.png" alt="Villanova Cosmetics & One Day Surgery Center Logo"
+                            class="logo-img" style="filter: none; max-height: 48px;">
+                    </a>
+                </div>
+
+                <!-- Contacts Column -->
+                <div class="footer-column right">
+                    <h4>Contacts</h4>
+                    <a href="tel:+97144580366" class="contact-link">04 458 0366</a>
+                    <a href="tel:+971509398270" class="contact-link">050 939 8270</a>
+                    <a href="mailto:admin@villanovamedical.ae" class="contact-link email">admin@villanovamedical.ae</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>VILLANOVA - BY NEXTDOT SOLUTION</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+
+</html>
