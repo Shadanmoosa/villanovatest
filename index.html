@@ -515,9 +515,14 @@
             <div class="comparison-content reveal-element reveal-left">
                 <span class="comparison-tag">ANTI-AGING EXPERTS</span>
                 <h2 class="comparison-title">EVERY FACIAL PROCEDURE IS A PIECE OF ART</h2>
-                <p class="comparison-desc">We combine advanced anti-aging surgery with non-surgical treatments—including Botox, dermal fillers, and Endolift—to restore a refreshed, youthful contour to your face and neck. Every procedure is tailored to enhance your natural facial harmony for subtle, elegant results.</p>
-                <p class="comparison-desc" style="font-weight: 500; color: var(--navy); margin-top: 15px; margin-bottom: 20px;">Consult our specialists to discover the ideal treatment for you.</p>
-                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20consult%20a%20doctor%20about%20facial%20procedures." target="_blank" class="about-btn">CHAT WITH EXPERT NOW</a>
+                <p class="comparison-desc">We combine advanced anti-aging surgery with non-surgical treatments—including
+                    Botox, dermal fillers, and Endolift—to restore a refreshed, youthful contour to your face and neck.
+                    Every procedure is tailored to enhance your natural facial harmony for subtle, elegant results.</p>
+                <p class="comparison-desc"
+                    style="font-weight: 500; color: var(--navy); margin-top: 15px; margin-bottom: 20px;">Consult our
+                    specialists to discover the ideal treatment for you.</p>
+                <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20consult%20a%20doctor%20about%20facial%20procedures."
+                    target="_blank" class="about-btn">CHAT WITH EXPERT NOW</a>
             </div>
 
             <!-- Right: Image slider comparison -->
@@ -612,7 +617,8 @@
                         fat, and sculpt muscles using cutting-edge surgical technology. Let us help you restore
                         confidence in your appearance and enhance your natural beauty with body procedures performed by
                         some of the most qualified plastic surgeons in Jumeirah, Dubai.</p>
-                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20body%20procedures." target="_blank" class="hotspots-btn">CHAT WITH EXPERTS</a>
+                    <a href="https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20inquire%20about%20body%20procedures."
+                        target="_blank" class="hotspots-btn">CHAT WITH EXPERTS</a>
                 </div>
             </div>
         </div>
@@ -673,7 +679,9 @@
             <h2 class="gallery-banner-title">EXPLORE OUR <br class="desktop-only">BEFORE & AFTER <br
                     class="desktop-only">GALLERY</h2>
             <p class="gallery-banner-desc">Results that speak for themselves.</p>
-            <button class="gallery-banner-btn" id="open-gallery-modal">EXPLORE GALLERY</button>
+            <button class="gallery-banner-btn"
+                onclick="document.getElementById('gallery-request-modal').classList.add('active');">EXPLORE
+                GALLERY</button>
         </div>
     </section>
 
@@ -1856,329 +1864,306 @@
                         <source src="images/villanovaclinics.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-        </div>
-
-        <!-- GALLERY REQUEST MODAL -->
-        <div class="gallery-modal-overlay" id="gallery-request-modal">
-            <div class="gallery-modal-card">
-                <button class="gallery-modal-close" id="close-gallery-modal" aria-label="Close Modal">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-                <div class="gallery-modal-header">
-                    <span class="gallery-modal-tag">Private Access</span>
-                    <h3 class="gallery-modal-title">Request Gallery Access</h3>
-                    <p class="gallery-modal-desc">Enter your details to view confidential before & after photos and starting price lists.</p>
                 </div>
-                <form class="gallery-modal-form" id="gallery-request-form">
-                    <div class="form-group">
-                        <label for="gallery-name">Full Name</label>
-                        <input type="text" id="gallery-name" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gallery-phone">Phone Number</label>
-                        <input type="tel" id="gallery-phone" class="form-control" placeholder="+971 50 000 0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gallery-treatment">Select Treatment</label>
-                        <select id="gallery-treatment" class="form-control" required>
-                            <option value="" disabled selected>Select Treatment</option>
-                            <option value="Liposuction">Liposuction</option>
-                            <option value="Breast Augmentation">Breast Augmentation</option>
-                            <option value="Breast Implant">Breast Implant</option>
-                            <option value="Tummy Tuck">Tummy Tuck</option>
-                            <option value="Mommy Makeover">Mommy Makeover</option>
-                            <option value="Gynecomastia">Gynecomastia</option>
-                            <option value="Otoplasty">Otoplasty</option>
-                            <option value="Breast Reduction">Breast Reduction</option>
-                            <option value="Rhinoplasty">Rhinoplasty</option>
-                            <option value="Endolift">Endolift</option>
-                        </select>
-                    </div>
-
-                    <div class="gallery-price-box" id="gallery-price-box">
-                        <div class="price-title">Starting Price Estimate</div>
-                        <div class="price-value" id="gallery-price-value">AED 0</div>
-                        <div class="price-note">Before-and-after photos will be sent directly by our medical specialists to protect patient privacy in compliance with Dubai Healthcare guidelines.</div>
-                    </div>
-
-                    <button type="submit" class="gallery-submit-btn">REQUEST DETAILS & GALLERY</button>
-                </form>
             </div>
         </div>
 
-        <!-- Gallery Modal Styles -->
-        <style>
-            .gallery-modal-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(29, 44, 71, 0.6);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                z-index: 2000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            }
+        <!-- GALLERY REQUEST MODAL -->
+                <div class="gallery-modal-overlay" id="gallery-request-modal"
+                    onclick="if(event.target === this) this.classList.remove('active');">
+                    <div class="gallery-modal-card">
+                        <button class="gallery-modal-close"
+                            onclick="document.getElementById('gallery-request-modal').classList.remove('active');"
+                            aria-label="Close Modal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="gallery-modal-header">
+                            <span class="gallery-modal-tag">Private Access</span>
+                            <h3 class="gallery-modal-title">Request Gallery Access</h3>
+                            <p class="gallery-modal-desc">Enter your details to request private access to our confidential before & after gallery.</p>
+                        </div>
+                        <form class="gallery-modal-form" id="gallery-request-form">
+                            <div class="form-group">
+                                <label for="gallery-name">Full Name</label>
+                                <input type="text" id="gallery-name" class="form-control" placeholder="Your Name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gallery-phone">Phone Number</label>
+                                <input type="tel" id="gallery-phone" class="form-control" placeholder="+971 50 000 0000"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gallery-treatment">Select Treatment</label>
+                                <select id="gallery-treatment" class="form-control" required>
+                                    <option value="" disabled selected>Select Treatment</option>
+                                    <option value="Liposuction">Liposuction</option>
+                                    <option value="Breast Augmentation">Breast Augmentation</option>
+                                    <option value="Breast Implant">Breast Implant</option>
+                                    <option value="Tummy Tuck">Tummy Tuck</option>
+                                    <option value="Mommy Makeover">Mommy Makeover</option>
+                                    <option value="Gynecomastia">Gynecomastia</option>
+                                    <option value="Otoplasty">Otoplasty</option>
+                                    <option value="Breast Reduction">Breast Reduction</option>
+                                    <option value="Rhinoplasty">Rhinoplasty</option>
+                                    <option value="Endolift">Endolift</option>
+                                </select>
+                            </div>
 
-            .gallery-modal-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
+                            <button type="submit" class="gallery-submit-btn">REQUEST GALLERY ACCESS</button>
+                        </form>
+                    </div>
+                </div>
 
-            .gallery-modal-card {
-                background-color: var(--white);
-                background-image: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)), url('images/marble-bg.jpg');
-                background-size: cover;
-                background-position: center;
-                border: 1px solid rgba(205, 170, 125, 0.2);
-                border-radius: 4px;
-                width: 90%;
-                max-width: 500px;
-                padding: 40px;
-                position: relative;
-                box-shadow: 0 20px 50px rgba(29, 44, 71, 0.15);
-                transform: translateY(30px);
-                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            }
+                <!-- Gallery Modal Styles -->
+                <style>
+                    .gallery-modal-overlay {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(29, 44, 71, 0.6);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                        z-index: 2000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    }
 
-            .gallery-modal-overlay.active .gallery-modal-card {
-                transform: translateY(0);
-            }
+                    .gallery-modal-overlay.active {
+                        opacity: 1;
+                        visibility: visible;
+                    }
 
-            .gallery-modal-close {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                color: var(--navy);
-                padding: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: transform 0.3s ease, color 0.3s ease;
-            }
+                    .gallery-modal-card {
+                        background-color: var(--white);
+                        background-image: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)), url('images/marble-bg.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        border: 1px solid rgba(205, 170, 125, 0.2);
+                        border-radius: 4px;
+                        width: 90%;
+                        max-width: 500px;
+                        padding: 40px;
+                        position: relative;
+                        box-shadow: 0 20px 50px rgba(29, 44, 71, 0.15);
+                        transform: translateY(30px);
+                        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    }
 
-            .gallery-modal-close:hover {
-                color: var(--gold);
-                transform: rotate(90deg);
-            }
+                    .gallery-modal-overlay.active .gallery-modal-card {
+                        transform: translateY(0);
+                    }
 
-            .gallery-modal-header {
-                text-align: center;
-                margin-bottom: 30px;
-            }
+                    .gallery-modal-close {
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: var(--navy);
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: transform 0.3s ease, color 0.3s ease;
+                    }
 
-            .gallery-modal-tag {
-                font-family: var(--font-sans);
-                font-size: 11px;
-                font-weight: 700;
-                letter-spacing: 0.2em;
-                color: var(--gold);
-                text-transform: uppercase;
-                margin-bottom: 10px;
-                display: block;
-            }
+                    .gallery-modal-close:hover {
+                        color: var(--gold);
+                        transform: rotate(90deg);
+                    }
 
-            .gallery-modal-title {
-                font-family: var(--font-sans);
-                font-size: 24px;
-                font-weight: 300;
-                letter-spacing: 0.15em;
-                color: var(--navy);
-                margin: 0 0 10px 0;
-                text-transform: uppercase;
-            }
+                    .gallery-modal-header {
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
 
-            .gallery-modal-desc {
-                font-family: var(--font-sans);
-                font-size: 13px;
-                line-height: 1.6;
-                color: var(--text-gray);
-                margin: 0;
-            }
+                    .gallery-modal-tag {
+                        font-family: var(--font-sans);
+                        font-size: 11px;
+                        font-weight: 700;
+                        letter-spacing: 0.2em;
+                        color: var(--gold);
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                        display: block;
+                    }
 
-            .gallery-modal-form .form-group {
-                margin-bottom: 20px;
-                text-align: left;
-            }
+                    .gallery-modal-title {
+                        font-family: var(--font-sans);
+                        font-size: 24px;
+                        font-weight: 300;
+                        letter-spacing: 0.15em;
+                        color: var(--navy);
+                        margin: 0 0 10px 0;
+                        text-transform: uppercase;
+                    }
 
-            .gallery-modal-form label {
-                display: block;
-                font-family: var(--font-sans);
-                font-size: 10px;
-                font-weight: 700;
-                letter-spacing: 0.15em;
-                color: var(--navy);
-                margin-bottom: 8px;
-                text-transform: uppercase;
-            }
+                    .gallery-modal-desc {
+                        font-family: var(--font-sans);
+                        font-size: 13px;
+                        line-height: 1.6;
+                        color: var(--text-gray);
+                        margin: 0;
+                    }
 
-            .gallery-modal-form .form-control {
-                width: 100%;
-                padding: 14px 18px;
-                font-family: var(--font-sans);
-                font-size: 13px;
-                border: 1px solid rgba(29, 44, 71, 0.1);
-                background-color: rgba(247, 245, 240, 0.4);
-                color: var(--navy);
-                border-radius: 2px;
-                transition: all 0.3s ease;
-                box-sizing: border-box;
-            }
+                    .gallery-modal-form .form-group {
+                        margin-bottom: 20px;
+                        text-align: left;
+                    }
 
-            .gallery-modal-form .form-control:focus {
-                outline: none;
-                border-color: var(--gold);
-                background-color: var(--white);
-            }
+                    .gallery-modal-form label {
+                        display: block;
+                        font-family: var(--font-sans);
+                        font-size: 10px;
+                        font-weight: 700;
+                        letter-spacing: 0.15em;
+                        color: var(--navy);
+                        margin-bottom: 8px;
+                        text-transform: uppercase;
+                    }
 
-            .gallery-price-box {
-                margin-top: 25px;
-                background-color: rgba(205, 170, 125, 0.05);
-                border: 1px dashed rgba(205, 170, 125, 0.3);
-                padding: 18px;
-                border-radius: 4px;
-                display: none;
-                text-align: left;
-                animation: fadeIn 0.4s ease forwards;
-            }
+                    .gallery-modal-form .form-control {
+                        width: 100%;
+                        padding: 14px 18px;
+                        font-family: var(--font-sans);
+                        font-size: 13px;
+                        border: 1px solid rgba(29, 44, 71, 0.1);
+                        background-color: rgba(247, 245, 240, 0.4);
+                        color: var(--navy);
+                        border-radius: 2px;
+                        transition: all 0.3s ease;
+                        box-sizing: border-box;
+                    }
 
-            .price-title {
-                font-family: var(--font-sans);
-                font-size: 10px;
-                font-weight: 700;
-                letter-spacing: 0.15em;
-                color: var(--gold);
-                margin-bottom: 5px;
-                text-transform: uppercase;
-            }
+                    .gallery-modal-form .form-control:focus {
+                        outline: none;
+                        border-color: var(--gold);
+                        background-color: var(--white);
+                    }
 
-            .price-value {
-                font-family: var(--font-sans);
-                font-size: 20px;
-                font-weight: 600;
-                color: var(--navy);
-                letter-spacing: 0.05em;
-            }
 
-            .price-note {
-                font-family: var(--font-sans);
-                font-size: 11px;
-                color: var(--text-gray);
-                margin-top: 8px;
-                line-height: 1.4;
-            }
 
-            .gallery-submit-btn {
-                width: 100%;
-                margin-top: 25px;
-                font-family: var(--font-sans);
-                font-size: 11px;
-                font-weight: 700;
-                letter-spacing: 0.2em;
-                color: var(--white);
-                background-color: var(--navy);
-                border: 1px solid var(--navy);
-                padding: 16px;
-                text-transform: uppercase;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                border-radius: 2px;
-            }
+                    .gallery-submit-btn {
+                        width: 100%;
+                        margin-top: 25px;
+                        font-family: var(--font-sans);
+                        font-size: 11px;
+                        font-weight: 700;
+                        letter-spacing: 0.2em;
+                        color: var(--white);
+                        background-color: var(--navy);
+                        border: 1px solid var(--navy);
+                        padding: 16px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border-radius: 2px;
+                    }
 
-            .gallery-submit-btn:hover {
-                background-color: transparent;
-                color: var(--navy);
-            }
+                    .gallery-submit-btn:hover {
+                        background-color: transparent;
+                        color: var(--navy);
+                    }
 
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(5px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-
-        <!-- Gallery Modal Scripts -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const openGalleryBtn = document.getElementById('open-gallery-modal');
-                const galleryModal = document.getElementById('gallery-request-modal');
-                const closeGalleryBtn = document.getElementById('close-gallery-modal');
-                const galleryForm = document.getElementById('gallery-request-form');
-                const galleryTreatmentSelect = document.getElementById('gallery-treatment');
-                const galleryPriceBox = document.getElementById('gallery-price-box');
-                const galleryPriceValue = document.getElementById('gallery-price-value');
-
-                const treatmentPrices = {
-                    "Liposuction": "AED 15,000",
-                    "Breast Augmentation": "AED 18,000",
-                    "Breast Implant": "AED 20,000",
-                    "Tummy Tuck": "AED 22,000",
-                    "Mommy Makeover": "AED 35,000",
-                    "Gynecomastia": "AED 12,000",
-                    "Otoplasty": "AED 10,000",
-                    "Breast Reduction": "AED 20,000",
-                    "Rhinoplasty": "AED 18,000",
-                    "Endolift": "AED 8,000"
-                };
-
-                if (openGalleryBtn && galleryModal) {
-                    openGalleryBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        galleryModal.classList.add('active');
-                    });
-
-                    closeGalleryBtn.addEventListener('click', () => {
-                        galleryModal.classList.remove('active');
-                    });
-
-                    galleryModal.addEventListener('click', (e) => {
-                        if (e.target === galleryModal) {
-                            galleryModal.classList.remove('active');
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(5px);
                         }
-                    });
 
-                    galleryTreatmentSelect.addEventListener('change', (e) => {
-                        const selectedVal = e.target.value;
-                        if (selectedVal && treatmentPrices[selectedVal]) {
-                            galleryPriceValue.textContent = treatmentPrices[selectedVal];
-                            galleryPriceBox.style.display = 'block';
-                        } else {
-                            galleryPriceBox.style.display = 'none';
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
                         }
-                    });
+                    }
+                </style>
 
-                    galleryForm.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        const name = document.getElementById('gallery-name').value;
-                        const phone = document.getElementById('gallery-phone').value;
-                        const treatment = galleryTreatmentSelect.value;
-                        const price = treatmentPrices[treatment];
+                <!-- Gallery Modal Scripts -->
+                <script>
+                    (function () {
+                        const galleryModal = document.getElementById('gallery-request-modal');
+                        const galleryForm = document.getElementById('gallery-request-form');
+                        const galleryTreatmentSelect = document.getElementById('gallery-treatment');
 
-                        const messageText = `Hi Royal Villanova, my name is ${name} (${phone}). I would like to request the Before & After photos and details for ${treatment} (Starting from ${price}).`;
-                        const waUrl = `https://wa.me/971509398270?text=${encodeURIComponent(messageText)}`;
+                        if (galleryForm && galleryModal) {
+                            galleryForm.addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                const name = document.getElementById('gallery-name').value.trim();
+                                const phone = document.getElementById('gallery-phone').value.trim();
+                                const treatment = galleryTreatmentSelect.value;
 
-                        window.open(waUrl, '_blank');
-                        galleryModal.classList.remove('active');
-                        galleryForm.reset();
-                        galleryPriceBox.style.display = 'none';
-                    });
-                }
-            });
-        </script>
+                                if (!name || !phone || !treatment) {
+                                    if (window.showToast) {
+                                        window.showToast('Please fill out all fields.', 'error');
+                                    }
+                                    return;
+                                }
 
-        <script src="main.js"></script>
+                                const submitBtn = galleryForm.querySelector('.gallery-submit-btn');
+                                const originalText = submitBtn.innerText;
+                                submitBtn.innerText = 'PROCESSING...';
+                                submitBtn.disabled = true;
+
+                                const payload = {
+                                    access_key: "3ed5c319-1c62-4376-9d3a-9a14041546b5",
+                                    subject: `Before & After Gallery Access Request - ${name}`,
+                                    from_name: "Villanova Cosmetics Clinic",
+                                    name: name,
+                                    phone: phone,
+                                    treatment: treatment
+                                };
+
+                                fetch('https://api.web3forms.com/submit', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Accept': 'application/json'
+                                    },
+                                    body: JSON.stringify(payload)
+                                })
+                                .then(async (response) => {
+                                    const json = await response.json();
+                                    if (response.status === 200) {
+                                        if (window.showToast) {
+                                            window.showToast(`Thank you, ${name}! Your gallery access request has been sent. We will contact you soon.`, 'success');
+                                        }
+                                        galleryForm.reset();
+                                        galleryModal.classList.remove('active');
+                                    } else {
+                                        console.error(json);
+                                        if (window.showToast) {
+                                            window.showToast(json.message || 'Something went wrong. Please try again.', 'error');
+                                        }
+                                    }
+                                })
+                                .catch((error) => {
+                                    console.error(error);
+                                    if (window.showToast) {
+                                        window.showToast('Failed to send request. Please check your internet connection.', 'error');
+                                    }
+                                })
+                                .finally(() => {
+                                    submitBtn.innerText = originalText;
+                                    submitBtn.disabled = false;
+                                });
+                            });
+                        }
+                    })();
+                </script>
+
+                <script src="main.js"></script>
 </body>
 
 </html>

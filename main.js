@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 400);
         }, 4000);
     }
+    window.showToast = showToast;
 
     // Before / After Slider Control
     const slider = document.getElementById('before-after-slider');
