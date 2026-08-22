@@ -807,9 +807,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Piero Crabai is an internationally renowned plastic surgeon with over 25 years of surgical excellence in Dubai and Europe. He combines artistic vision with cutting-edge surgical techniques to achieve natural, age-defying results.',
             exp: '25+ Years Experience',
             lang: 'English, Italian, French',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
-            website: 'https://villanovamedical.ae',
+            linkedin: 'https://www.linkedin.com/in/piero-crabai-9a754160/',
+            instagram: 'https://www.instagram.com/crabaisurgery/',
+            website: 'https://crabaisurgery.com/',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Piero%20Crabai'
         },
         'doc-2': {
@@ -821,7 +821,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp: '15+ Years Experience',
             lang: 'English, Arabic',
             linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
+            instagram: 'https://www.instagram.com/majedhatem/',
             website: 'https://villanovamedical.ae',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Majed'
         },
@@ -833,9 +833,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Mohammed Abedian is a consultant general surgeon specializing in advanced laparoscopic procedures, abdominal surgery, and surgical wellness.',
             exp: '18+ Years Experience',
             lang: 'English, Arabic, Persian',
-            linkedin: 'https://linkedin.com',
+            linkedin: 'https://www.linkedin.com/in/mohammad-abedian-a0a69736/',
             instagram: 'https://instagram.com',
-            website: 'https://villanovamedical.ae',
+            website: 'https://mohammadabedian.com/',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Mohammed%20Abedian'
         },
         'doc-4': {
@@ -846,9 +846,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Husain Haidar provides senior general surgical care focusing on minimally invasive techniques, abdominal interventions, and patient recovery.',
             exp: '16+ Years Experience',
             lang: 'English, Arabic',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
-            website: 'https://villanovamedical.ae',
+            linkedin: 'https://www.linkedin.com/in/drhusainhaidar/',
+            instagram: 'https://www.instagram.com/drhusainhaidar/',
+            website: 'https://drhusainhaidar.com/',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Husain%20Haidar'
         },
         'doc-5': {
@@ -859,8 +859,8 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Hamed Abasi is an Otolaryngologist (ENT Specialist) expert in sinus care, nasal aesthetics, throat treatments, and head & neck surgery.',
             exp: '14+ Years Experience',
             lang: 'English, Persian, Arabic',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
+            linkedin: 'https://www.linkedin.com/in/hamed-abasi-6076a657/',
+            instagram: 'https://www.instagram.com/drhamedabasi_uae/',
             website: 'https://villanovamedical.ae',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Hamed%20Abasi'
         },
@@ -885,8 +885,8 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Sereen Al-Helo is a skilled dental specialist dedicated to smile design, teeth whitening, veneers, and aesthetic dental restoration.',
             exp: '15+ Years Experience',
             lang: 'English, Arabic',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
+            linkedin: 'https://www.linkedin.com/in/dr-sereen-elhelou-b-d-s%F0%9F%92%89-992723195/',
+            instagram: 'https://www.instagram.com/dr.sereen.alhelo/',
             website: 'https://villanovamedical.ae',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Sereen%20Al-Helo'
         },
@@ -898,8 +898,8 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Nayereh Kaboli provides clinical nutritional therapy, metabolic body composition analysis, personalized dietary planning, and health optimization.',
             exp: '14+ Years Experience',
             lang: 'English, Persian',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
+            linkedin: 'https://www.linkedin.com/in/dr-nayere-esmaeil-kaboli-b502a776/',
+            instagram: 'https://www.instagram.com/clinic_taghzie/',
             website: 'https://villanovamedical.ae',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Nayereh%20Kaboli'
         },
@@ -911,8 +911,8 @@ document.addEventListener('DOMContentLoaded', () => {
             bio: 'Dr. Abas Rahimi is a consultant physiotherapist specializing in musculoskeletal rehabilitation, sports injuries, posture correction, and physical wellness.',
             exp: '17+ Years Experience',
             lang: 'English, Persian, Arabic',
-            linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
+            linkedin: 'https://www.linkedin.com/in/abbas-r-89878a78/',
+            instagram: 'https://www.instagram.com/pt_dr.rahimi/',
             website: 'https://villanovamedical.ae',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Abas%20Rahimi'
         }
