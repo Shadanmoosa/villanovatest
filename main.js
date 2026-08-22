@@ -326,7 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="enter-wrapper" style="opacity:0;">
                         <h3>${newData.title.toUpperCase()}</h3>
                         <p>${newData.desc}</p>
-                        <a href="about.html" class="procedure-view-details-btn">VIEW DETAILS</a>
                     </div>
                 `;
 
@@ -354,7 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     textCard.innerHTML = `
                         <h3>${newData.title.toUpperCase()}</h3>
                         <p>${newData.desc}</p>
-                        <a href="about.html" class="procedure-view-details-btn">VIEW DETAILS</a>
                     `;
                     imgContainer.innerHTML = `
                         <img src="${newData.img}" alt="${newData.title}">
