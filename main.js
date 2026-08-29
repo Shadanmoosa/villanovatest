@@ -864,17 +864,17 @@ document.addEventListener('DOMContentLoaded', () => {
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Hamed%20Abasi'
         },
         'doc-6': {
-            name: 'DR. OMID',
+            name: 'DR. AMR',
             role: 'AESTHETIC DOCTOR',
             badge: 'AESTHETIC MEDICINE',
-            img: 'images/villanovadoctors/dromid.jpg',
-            bio: 'Dr. Omid specializes in non-surgical facial aesthetics, dermal fillers, neuromodulators, skin rejuvenation, and personalized anti-aging care.',
-            exp: '12+ Years Experience',
-            lang: 'English, Persian',
+            img: 'images/villanovadoctors/drAmr.jpg',
+            bio: 'Dr. Amr specializes in non-surgical facial aesthetics, dermal fillers, neuromodulators, skin rejuvenation, and personalized anti-aging care.',
+            exp: '',
+            lang: 'English, Arabic',
             linkedin: 'https://linkedin.com',
-            instagram: 'https://instagram.com',
-            website: 'https://villanovamedical.ae',
-            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Omid'
+            instagram: 'https://www.instagram.com/dr.raiboy/',
+            website: 'https://raiboy.com/',
+            whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Amr'
         },
         'doc-7': {
             name: 'DR. SEREEN AL-HELO',
@@ -990,7 +990,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalName) modalName.textContent = data.name;
             if (modalRole) modalRole.textContent = data.role;
             if (modalBio) modalBio.textContent = data.bio;
-            if (modalExp) modalExp.textContent = data.exp;
+            if (modalExp) {
+                modalExp.textContent = data.exp;
+                const expItem = modalExp.closest('.v-detail-item');
+                if (expItem) {
+                    expItem.style.display = data.exp ? '' : 'none';
+                }
+            }
             if (modalLang) modalLang.textContent = data.lang;
 
             if (modalLinkedin) modalLinkedin.href = data.linkedin;
