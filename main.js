@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const time = document.getElementById('booking-time').value;
             
             if (!name || !phone) {
-                showToast('Please fill out Name and Phone fields to make an appointment.', 'error');
+                showToast('Please fill out Name and Phone fields to register your interest.', 'error');
                 return;
             }
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE" || !WEB3FORMS_ACCESS_KEY) {
                 console.warn("Web3Forms Access Key is not configured. Simulating success...");
                 setTimeout(() => {
-                    showToast(`Demo Mode: Thank you, ${name}! Your appointment request is simulated. (Please configure WEB3FORMS_ACCESS_KEY in main.js to receive real emails)`, 'success');
+                    showToast(`Demo Mode: Thank you, ${name}! Your request has been registered. (Please configure WEB3FORMS_ACCESS_KEY in main.js to receive real emails)`, 'success');
                     appointmentForm.reset();
                     submitBtn.innerText = originalText;
                     submitBtn.disabled = false;
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Real email submission using Web3Forms
             const payload = {
                 access_key: WEB3FORMS_ACCESS_KEY,
-                subject: `New Appointment Request - ${name}`,
+                subject: `New Interest Registration - ${name}`,
                 from_name: "Villanova Cosmetics Clinic",
                 name: name,
                 phone: phone,
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(async (response) => {
                 const json = await response.json();
                 if (response.status === 200) {
-                    showToast(`Thank you, ${name}! Your appointment request has been sent. We will contact you soon.`, 'success');
+                    showToast(`Thank you, ${name}! Your request has been registered. We will contact you soon.`, 'success');
                     appointmentForm.reset();
                 } else {
                     console.error(json);
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch((error) => {
                 console.error(error);
-                showToast('Failed to submit appointment. Please check your internet connection.', 'error');
+                showToast('Failed to submit request. Please check your internet connection.', 'error');
             })
             .finally(() => {
                 submitBtn.innerText = originalText;
