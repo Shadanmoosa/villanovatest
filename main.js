@@ -912,7 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lang: 'English, Persian, Arabic',
             linkedin: 'https://www.linkedin.com/in/abbas-r-89878a78/',
             instagram: 'https://www.instagram.com/pt_dr.rahimi/',
-            website: 'https://villanovamedical.ae',
+            website: 'physiotherapy.html',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Abas%20Rahimi'
         }
     };
