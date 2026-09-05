@@ -860,7 +860,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lang: 'English, Persian, Arabic',
             linkedin: 'https://www.linkedin.com/in/hamed-abasi-6076a657/',
             instagram: 'https://www.instagram.com/drhamedabasi_uae/',
-            website: 'https://villanovamedical.ae',
+            website: 'earnosethroat.html',
             whatsapp: 'https://wa.me/971509398270?text=Hi%20Villanova,%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Hamed%20Abasi'
         },
         'doc-6': {
