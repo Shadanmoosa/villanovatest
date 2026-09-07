@@ -766,11 +766,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Auto-switch to grid view if URL contains #services-section
+        // Auto-switch to grid view if URL contains #services-section (desktop screens only)
         const handleServicesHash = () => {
             if (window.location.hash === '#services-section') {
-                if (!isGridView && viewAllBtn) {
-                    viewAllBtn.click();
+                if (window.innerWidth > 768) {
+                    if (!isGridView && viewAllBtn) {
+                        viewAllBtn.click();
+                    }
+                } else {
+                    // On mobile view, guarantee it stays in normal mobile view (not desktop grid)
+                    if (isGridView && viewAllBtn) {
+                        viewAllBtn.click();
+                    }
                 }
             }
         };
@@ -781,12 +788,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         window.addEventListener('hashchange', handleServicesHash);
 
-        // Click listener on SERVICES & FIND YOUR PROCEDURE links to force grid view and smooth scroll
+        // Click listener on SERVICES & FIND YOUR PROCEDURE links
         const servicesNavLinks = document.querySelectorAll('a[href*="#services-section"]');
         servicesNavLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                if (!isGridView && viewAllBtn) {
-                    viewAllBtn.click();
+                // Only switch to grid view on desktop screens (> 768px), keep normal mobile view on mobile
+                if (window.innerWidth > 768) {
+                    if (!isGridView && viewAllBtn) {
+                        viewAllBtn.click();
+                    }
+                } else {
+                    if (isGridView && viewAllBtn) {
+                        viewAllBtn.click();
+                    }
                 }
                 const section = document.getElementById('services-section');
                 if (section && (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/'))) {

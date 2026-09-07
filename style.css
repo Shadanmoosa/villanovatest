@@ -2991,6 +2991,26 @@
      }
  }
 
+ @media (max-width: 768px) {
+     .procedures-carousel-container.grid-view-active {
+         padding: 0 20px !important;
+         max-width: 100% !important;
+     }
+
+     .procedures-carousel-container.grid-view-active .procedures-carousel-track {
+         flex-direction: column !important;
+         gap: 20px !important;
+         padding: 10px 0 !important;
+     }
+
+     .procedures-carousel-container.grid-view-active .procedures-carousel-track .procedure-card {
+         flex: 0 0 auto !important;
+         max-width: 100% !important;
+         width: 100% !important;
+         aspect-ratio: 4 / 3 !important;
+     }
+ }
+
  .carousel-bottom-actions {
      display: flex;
      justify-content: center;
