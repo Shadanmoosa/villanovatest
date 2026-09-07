@@ -781,12 +781,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         window.addEventListener('hashchange', handleServicesHash);
 
-        // Click listener on header SERVICES link to force grid view even if hash doesn't change
+        // Click listener on SERVICES & FIND YOUR PROCEDURE links to force grid view and smooth scroll
         const servicesNavLinks = document.querySelectorAll('a[href*="#services-section"]');
         servicesNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
                 if (!isGridView && viewAllBtn) {
                     viewAllBtn.click();
+                }
+                const section = document.getElementById('services-section');
+                if (section && (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/'))) {
+                    e.preventDefault();
+                    section.scrollIntoView({ behavior: 'smooth' });
+                    if (window.location.hash !== '#services-section') {
+                        history.pushState(null, null, '#services-section');
+                    }
                 }
             });
         });
